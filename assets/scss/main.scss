@@ -1,0 +1,56 @@
+
+// Color
+$main-color: #387187;
+$second-color: #d76b54;
+$accent-color: #D7B154;
+$main-color-dark: #10475C;
+$white: #FBFCFD;
+$overlay: rgba(56, 113, 135, 0.3);
+$card-bg: rgba(16, 71, 92,0.3);
+
+// Padding
+$paddin-card: 16px 32px;
+$margin-top: 64px;
+
+// Font
+@mixin font ($size, $weight) {
+    font-family: "ivysoft-variable", sans-serif;
+    line-height: 143%;
+    font-size: $size;
+    font-weight: $weight;
+}
+
+@mixin font-anim ($line, $size, $weight) {
+    font-family: "ivysoft-variable", sans-serif;
+    line-height: $line;
+    font-size: $size;
+    font-weight: $weight;
+}
+
+
+// FLexbox
+@mixin flex ($direction, $justify, $align, $gap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+// Button
+@mixin border-button {
+    border: none;
+    border-radius: 50px;
+}
+$padding-button: 16px 32px;
+$padding-button-little: 4px 8px;
+
+// Keyframes
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
