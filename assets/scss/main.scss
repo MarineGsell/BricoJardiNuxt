@@ -4,6 +4,7 @@ $main-color: #387187;
 $second-color: #d76b54;
 $accent-color: #D7B154;
 $main-color-dark: #10475C;
+$main-color-light: #8DB5C5;
 $white: #FBFCFD;
 $overlay: rgba(56, 113, 135, 0.3);
 $card-bg: rgba(16, 71, 92,0.3);
@@ -27,6 +28,8 @@ $margin-top: 64px;
     font-weight: $weight;
 }
 
+// Card
+$border-card: 10px;
 
 // FLexbox
 @mixin flex ($direction, $justify, $align, $gap) {
@@ -44,6 +47,9 @@ $margin-top: 64px;
 }
 $padding-button: 16px 32px;
 $padding-button-little: 4px 8px;
+
+// Transitions
+$transition: all 0.3s ease-in-out;
 
 // Keyframes
 @keyframes fadeIn {

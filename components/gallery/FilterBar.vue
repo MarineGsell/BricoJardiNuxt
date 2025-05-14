@@ -7,7 +7,6 @@
 </template>
 <style lang="scss" scoped>
 .filterBar {
-    margin: 32px 0; 
     @include flex(row, center, center, 48px)
 }
 </style>

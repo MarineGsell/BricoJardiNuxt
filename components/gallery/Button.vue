@@ -13,7 +13,7 @@ const props = defineProps({
 const emit = defineEmits(['filter']) 
 
 const handleClick = () => {
-    emit('filter', category)
+    emit('filter', props.category)
 }
 </script>
 <template>
@@ -27,16 +27,15 @@ const handleClick = () => {
 </template>
 <style lang="scss" scoped>
 .button {
-    background-color: $main-color;
+    background-color: $main-color-light;
     color: $white;
     padding: $padding-button;
     cursor: pointer;
+    transition: $transition;
     @include border-button;
     @include font(18px, 400);
     &:hover {
         background-color: $main-color-dark;
-        transform: scale(1.1);
-        transition: all 0.3s ease-in-out;
     }
     &--active {
         background-color: $main-color-dark;
