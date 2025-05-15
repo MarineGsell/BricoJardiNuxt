@@ -1,6 +1,7 @@
 <script setup>
 import realisations from '@/data/realisations';
 
+// Filter Bar
 const categories = ['Tous', 'Travaux extérieurs', 'Travaux intérieurs'] 
 const activeCategory = ref('Tous')
 const filteredRealisations = ref([...realisations])
@@ -14,7 +15,17 @@ const filteredByCategory = (category) => {
     }
     return filteredRealisations
 }
-console.log(filteredRealisations)
+
+// Modale
+const modale = ref(false)
+const selectedRealisation = ref(null)
+const openModale = (realisation) => {
+    selectedRealisation.value = realisation
+    modale.value = true
+}
+const closeModale = () => {
+    modale.value = false
+}
 
 </script>
 <template>
@@ -37,7 +48,14 @@ console.log(filteredRealisations)
                 :cover="realisation.image"
                 :title="realisation.title"
                 class="gallery__card"
+                @click="openModale(realisation)"
             />
+            <GalleryModale 
+                v-if="modale" 
+                @close="closeModale()"
+                :realisation="selectedRealisation"
+            />
+
         </div>
     </div>
 </template>
