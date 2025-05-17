@@ -1,5 +1,4 @@
 <script setup>
-// Props
 const props = defineProps({
     bannerTitle: {
         type: String,

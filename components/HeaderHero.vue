@@ -22,44 +22,16 @@
     </section>
 </template>
 <style lang="scss">
-@keyframes title-anim {
-    0% {
-        margin-top: 0;
-    }
-    12.5% {
-        margin-top: -88px;
-    }
-    25% {
-        margin-top: -176px;
-    }
-    37.5% {
-        margin-top: -264px;
-    }
-    50% {
-        margin-top: -352px;
-    }
-    62.5% {
-        margin-top: -264px;
-    }
-    75% {
-        margin-top: -176px;
-    }
-    87.5% {
-        margin-top: -88px;
-    }
-    100% {
-        margin-top: 0;
-    }
-};
+
 .headerhero {
     margin-top: $margin-top;
+    height: calc(100vh - 64px);
     padding: 64px 0;
-    background-image: linear-gradient(to top, #387187, #2f667c, #255c71, #1b5167, #10475c);
+    background-image: $round-gradient;
     color: $white;
-    @include flex (column, center, center, 64px);
+    @include flex (column, start, center, 56px);
     &__title {
         width: 70%;
-        margin: auto;
         @include flex (column, center, center, 24px);
         &__text {
             text-align: center;
@@ -77,13 +49,10 @@
                     animation: title-anim 12s infinite;
                 }
             }
-
-
         }
     }
     &__subtitle {
         width: 50%;
-        margin: auto;
         text-align: center;
         @include font(18px, 400)
     }

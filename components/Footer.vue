@@ -10,8 +10,8 @@
 
 <style lang="scss" scoped>
 .footer {
-    height: 200px;
-    background-color: $main-color;
+    height: 400px;
+    background-color: $main-color-dark;
     color: $white;
     @include flex(column, center, center, 24px);
     &__logo {

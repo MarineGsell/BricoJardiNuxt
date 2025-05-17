@@ -9,6 +9,7 @@ $white: #FBFCFD;
 $overlay: rgba(56, 113, 135, 0.3);
 $overlay-dark: rgba(16, 71, 92, 0.3);
 $card-bg: rgba(16, 71, 92,0.3);
+$round-gradient: radial-gradient(circle, #10475c, #134b61, #174f65, #1a546a, #1d586f, #205c72, #245f76, #276379, #2b667c, #306a80, #346d83, #387187);
 
 // Padding
 $paddin-card: 16px 32px;
@@ -59,5 +60,48 @@ $transition: all 0.3s ease-in-out;
     }
     to {
         opacity: 1;
+    }
+}
+@keyframes title-anim {
+    0% {
+        margin-top: 0;
+    }
+    12.5% {
+        margin-top: -88px;
+    }
+    25% {
+        margin-top: -176px;
+    }
+    37.5% {
+        margin-top: -264px;
+    }
+    50% {
+        margin-top: -352px;
+    }
+    62.5% {
+        margin-top: -264px;
+    }
+    75% {
+        margin-top: -176px;
+    }
+    87.5% {
+        margin-top: -88px;
+    }
+    100% {
+        margin-top: 0;
+    }
+}
+
+// Responsive
+$breakpoint-mobile: 768px;
+$breakpoint-tablette: 1024px;
+@mixin responsive-tablette {
+    @media (max-width: $breakpoint-tablette) { 
+        @content;
+    }
+}
+@mixin responsive-mobile {
+    @media (max-width: $breakpoint-mobile) { 
+        @content;
     }
 }
