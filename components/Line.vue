@@ -6,6 +6,6 @@
     height: 2px;
     width: 70%;
     margin: auto;
-    background-color: $second-color;
+    background-color: currentColor;
 }
 </style>

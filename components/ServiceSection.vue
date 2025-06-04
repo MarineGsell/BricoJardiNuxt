@@ -4,9 +4,9 @@ const props = defineProps({
         type: String,
         required: true
     },
-    bannerSubtitle: {
+    bannerText: {
         type: String,
-        required: true
+        default: ''
     },
     flexDirection: {
         type: String,
@@ -30,7 +30,7 @@ const props = defineProps({
     <div>
         <Banner 
             :title= "bannerTitle"
-            :subtitle= "bannerSubtitle"
+            :text= "bannerText"
         />
         <div class="box">
             <div class="box__service" :style="{ flexDirection:`${flexDirection}` }">
@@ -46,7 +46,7 @@ const props = defineProps({
                             <h3 class="box__service__content__item__title__text">{{ service.title }}</h3>
                         </div>
                         <div class="box__service__content__item__text">{{ service.description }}</div>
-                        <Line v-if="index < services.length - 1"/>
+                        <Line v-if="index < services.length - 1" class="box__service__content__item__line"/>
                     </div>
                 </div>
             </div>
@@ -86,6 +86,9 @@ const props = defineProps({
                 &__text {
                     margin-bottom: 40px;
                     @include font(18px, 400)
+                }
+                &__line {
+                    color: $second-color;
                 }
             }
         }

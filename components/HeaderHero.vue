@@ -25,7 +25,6 @@
 
 .headerhero {
     margin-top: $margin-top;
-    height: calc(100vh - 64px);
     padding: 64px 0;
     background-image: $round-gradient;
     color: $white;

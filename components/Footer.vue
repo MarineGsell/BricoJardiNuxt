@@ -11,7 +11,7 @@
 <style lang="scss" scoped>
 .footer {
     height: 400px;
-    background-color: $main-color-dark;
+    background-color: $main-color;
     color: $white;
     @include flex(column, center, center, 24px);
     &__logo {

@@ -6,30 +6,44 @@ const props = defineProps({
     },
     subtitle: {
         type: String,
-        required: true
+        default: ''
     },
+    text: {
+        type: String,
+        default: ''
+    }
 })
 </script>
 <template>
     <div class="banner">
-        <h2 class="banner__title">{{title}}</h2>
-        <p class="banner__subtitle">{{subtitle}}</p>
+        <div class="banner__header">
+            <h2 class="banner__header__title">{{title}}</h2>
+            <h3 class="banner__header__subtitle">{{subtitle}}</h3>
+        </div>
+        <p class="banner__text">{{ text }}</p>
     </div>
 </template>
 <style lang="scss" scoped>
 .banner {
-    height: 400px;
+    min-height: 400px;
     color: $white;
     background-color: $main-color;
     padding: 0 120px;
     @include flex(column, center, center, 40px);
-    &__title {
-        @include font(48px, 700)
+    &__header {
+        @include flex(column, center, center, 16px);
+        &__title {
+            text-transform: uppercase;
+            @include font(48px, 700)
+        }
+        &__subtitle {
+            text-align: center;
+            @include font(32px, 700);
+        }
     }
-    &__subtitle {
+    &__text {
         text-align: center;
-        @include font(18px, 400)
-        
+        @include font(18px, 400);
     }
 }
 </style>
