@@ -83,9 +83,9 @@ const servicesList = [
     },
     {
         id: "10",
-        title: "Demandes personnalisées",
+        title: "Un projet unique en tête ?",
         subtitle: "Un projet unique ? Nous réalisons vos idées sur mesure.",
-        description: "Vous avez un projet atypique ? La polyvalence de Brico Jardi s'adapte à vos besoins spécifiques. Contactons-nous pour toute demande particulière et bénéficiez d'un service sur mesure, quelle que soit la complexité de votre projet.",
+        description:"Votre projet ne correspond à aucune de nos catégories ? Pas de problème ! Chez Brico Jardi, nous aimons les défis et nous adaptons à vos besoins spécifiques. Qu'il s'agisse d'une création originale, d'une intervention technique particulière ou d'un assemblage de plusieurs services, nous étudions chaque demande avec attention.",
         icon: Perso,
         categorie: "autre"
     },

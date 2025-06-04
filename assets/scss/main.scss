@@ -5,15 +5,15 @@ $second-color: #d76b54;
 $accent-color: #D7B154;
 $main-color-dark: #10475C;
 $main-color-light: #8DB5C5;
+$accent-color-light: #FCDA87;
 $white: #FBFCFD;
 $overlay: rgba(56, 113, 135, 0.3);
 $overlay-dark: rgba(16, 71, 92, 0.3);
-$card-bg: rgba(16, 71, 92,0.3);
 $round-gradient: radial-gradient(circle, #10475c, #134b61, #174f65, #1a546a, #1d586f, #205c72, #245f76, #276379, #2b667c, #306a80, #346d83, #387187);
 
 // Padding
-$paddin-card: 16px 32px;
 $margin-top: 64px;
+$margin-bottom: 64px;
 
 // Font
 @mixin font ($size, $weight) {
@@ -32,6 +32,25 @@ $margin-top: 64px;
 
 // Card
 $border-card: 10px;
+$card-bg: rgba(215, 177, 84,0.4);
+$card-border-color: rgba(215, 177, 84,0.5);
+$paddin-card: 16px 32px;
+$padding-big-card: 64px 32px;
+
+
+@mixin card ($width) {
+    width: $width;
+    border-radius: $border-card;
+    border: 4px solid $accent-color;
+    background-color: $white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: $transition;
+    padding: $paddin-card;
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+}
 
 // FLexbox
 @mixin flex ($direction, $justify, $align, $gap) {

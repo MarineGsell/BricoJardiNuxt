@@ -37,7 +37,7 @@ const props = defineProps({
     box-shadow:
     0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    transition: 0.5s ease-in-out;
+    transition: $transition;
     cursor: pointer;
     @include flex(column, normal, normal, 32px);
     &:hover {
