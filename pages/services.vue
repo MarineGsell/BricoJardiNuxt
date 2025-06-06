@@ -52,25 +52,6 @@ const perso = servicesList.filter(service => service.categorie === "autre");
 .services {
     margin-top: $margin-top;
     margin-bottom: $margin-bottom;
-    &__perso {
-        // background-color: $accent-color;
-        // background: radial-gradient(circle 600px at center, rgba(251, 252, 253, 0.6) 0%, #D7B154 65%);
-        &__content {
-            width: 80%;
-            margin: auto;
-            padding: 64px 0;
-            @include flex(column, center, center, 56px);
-            @include card(80%);
-            &__title {
-                color: $second-color;
-                @include font(48px, 700);
-            }
-            &__description {
-                text-align: center;
-                @include font(18px, 400);
-            }
-        }
-    }
 }
 
 </style>

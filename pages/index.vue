@@ -1,6 +1,10 @@
 <script setup>
 // Data
 import servicesList from '~/data/servicesList';
+const amenagementExt = servicesList.filter(service => service.categorie === "amenagementExt");
+const entretienExt = servicesList.filter(service => service.categorie === "entretienExt");
+const travauxInt = servicesList.filter(service => service.categorie === "travauxInt");
+const perso = servicesList.filter(service => service.categorie === "autre");
 
 </script>
 <template>
@@ -15,7 +19,43 @@ import servicesList from '~/data/servicesList';
             <p class="about__text">Fort d'une expérience solide dans l'aménagement et l'entretien d'espaces extérieurs comme intérieurs, Brico Jardi vous propose des solutions sur mesure pour embellir votre cadre de vie. Notre engagement : un travail soigné, des délais respectés et une écoute attentive de vos besoins. Qu'il s'agisse de créer une terrasse en bois, de rénover votre intérieur ou d'entretenir votre jardin, nous mettons notre savoir-faire à votre service pour concrétiser vos projets, petits ou grands, sur le Bassin d'Arcachon et ses environs.</p>
             <ButtonsAccent>Devis Gratuit</ButtonsAccent>
         </section>
-        <section class="realisations">
+        <section class="services">
+            <h2 class="services__title">Des services qui s'adaptent</h2>
+            <p class="services__subtitle">Brico Jardi, votre spécialiste au Bassin d'Arcachon, vous accompagne dans tous vos projets d'aménagement. De la rénovation intérieure à la création d'espaces extérieurs uniques : Rénovation, terrasses bois, clôtures bois, entretien de jardin. Confiez-nous vos envies, nous les réalisons.</p>
+            <div class="services__cards">
+                <ServicesCard 
+                :services="amenagementExt"
+                title="Aménagements extérieurs"
+                ></ServicesCard>
+                <ServicesCard 
+                :services="entretienExt"
+                title="Entretien de jardin"
+                ></ServicesCard>
+                <ServicesCard 
+                :services="travauxInt"
+                title="Travaux intérieurs"
+                ></ServicesCard>
+                <!-- <Card
+                    v-for="service in servicesList"
+                    :key="service.id"
+                    :icon="service.icon"
+                    :title="service.title"
+                    :subtitle="service.subtitle"
+                /> -->
+            </div>
+            <BigCard
+                v-if="perso.length"
+                :title="perso[0].title"
+                :text="perso[0].description"
+                class="services__perso"
+                ctaLink="/contact"
+                ctaText="Parlez-nous de votre projet"
+            ></BigCard>
+            <div class="services__buttons">
+                <ButtonsAccent to="/contact">Devis gratuit</ButtonsAccent>
+            </div>
+        </section>
+                <section class="realisations">
             <div class="realisations__container">
                 <h2 class="realisations__container__title">Des réalisations sur mesures</h2>
                 <p class="realisations__container__subtitle">Découvrez nos projets terminés qui témoignent du savoir-faire et de l'engagement qualité de Brico Jardi. Chaque réalisation illustre notre capacité à transformer vos idées en réalité, qu'il s'agisse d'aménagements extérieurs, d'entretien de jardin ou de travaux intérieurs. Laissez-vous inspirer par ces exemples concrets de notre expertise au service de votre satisfaction.</p>
@@ -24,22 +64,6 @@ import servicesList from '~/data/servicesList';
                     <ButtonsAccent to="/contact">Devis Gratuit</ButtonsAccent>
                     <ButtonsRegular to="/realisations">Réalisations</ButtonsRegular>
                 </div>
-            </div>
-        </section>
-        <section class="services">
-            <h2 class="services__title">Des services qui s'adaptent</h2>
-            <p class="services__subtitle">Brico Jardi, votre spécialiste au Bassin d'Arcachon, vous accompagne dans tous vos projets d'aménagement. De la rénovation intérieure à la création d'espaces extérieurs uniques : Rénovation, terrasses bois, clôtures bois, entretien de jardin. Confiez-nous vos envies, nous les réalisons.</p>
-            <div class="services__cards">
-                <Card
-                    v-for="service in servicesList"
-                    :key="service.id"
-                    :icon="service.icon"
-                    :title="service.title"
-                    :subtitle="service.subtitle"
-                />
-            </div>
-            <div class="services__buttons">
-                <ButtonsAccent to="/contact">Devis gratuit</ButtonsAccent>
             </div>
         </section>
         <section class="contact">
