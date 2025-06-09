@@ -2,27 +2,95 @@
 // Color
 $main-color: #387187;
 $second-color: #d76b54;
-$accent-color: #D7B154;
-$main-color-dark: #10475C;
-$main-color-light: #8DB5C5;
-$accent-color-light: #FCDA87;
-$white: #FBFCFD;
+$accent-color: #5A8F4A;
+$text-color-main: #2E2E2E;
+$text-color-second: #5A5A5A;
+$white: #FFFFFF;
+$success-color: #43A047;
+$error-color: #E53935;
+$warning-color: #FB8C00;
+$info-color: #1E88E5;
+
+// Background
+$bg-color-main: #FFFFFF;
+$bg-color-second: #F5F5F5;
+
+// Gradient
 $overlay: rgba(56, 113, 135, 0.3);
 $overlay-dark: rgba(16, 71, 92, 0.3);
 $round-gradient: radial-gradient(circle, #10475c, #134b61, #174f65, #1a546a, #1d586f, #205c72, #245f76, #276379, #2b667c, #306a80, #346d83, #387187);
 
-// Padding
-$margin-top: 64px;
-$margin-bottom: 64px;
+// Icons
+$icons-height: 40px;
+$logo-height: 64px;
 
 // Font
-@mixin font ($size, $weight) {
+@mixin font-h1 ($color) {
     font-family: "ivysoft-variable", sans-serif;
-    line-height: 180%;
-    font-size: $size;
-    font-weight: $weight;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: $color;
 }
-
+@mixin font-h2 ($color) {
+    font-family: "ivysoft-variable", sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: $color;
+}
+@mixin font-h3 ($color) {
+    font-family: "ivysoft-variable", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: $text-color-main;
+}
+@mixin font-p ($color) {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: $color;
+    @include responsive-tablette {
+        font-size: 16px;
+    }
+    @include responsive-mobile {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+@mixin font-link {
+    font-family: "ivysoft-variable", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: $main-color;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    width: auto;
+    position: relative;
+    margin: 0 16px;
+    &:hover {
+        color: $second-color;
+        border-bottom: $second-color;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        background: $second-color;
+        height: 3px;
+        width: 100%;
+        left: 0;
+        bottom: -8px;
+        transform: scale(0);
+        transition: $transition;
+    }
+    &:hover::after {
+        transform: scale(1);
+    }
+}
 @mixin font-anim ($line, $size, $weight) {
     font-family: "ivysoft-variable", sans-serif;
     line-height: $line;
@@ -30,29 +98,170 @@ $margin-bottom: 64px;
     font-weight: $weight;
 }
 
-// Card
-$border-card: 10px;
-$card-bg: rgba(215, 177, 84,0.4);
-$card-border-color: rgba(215, 177, 84,0.5);
-$paddin-card: 0 32px;
-$padding-big-card: 64px 32px;
+// Espacement et Layout
+$max-width: 1200px;
+$margin-top: 64px;
+$margin-bottom: 64px;
+$margin-side-desktop: 48px;
+$margin-side-mobile: 24px;
 
+$gap-main-desktop: 80px;
+$gap-main-tablette: 64px;
+$gap-main-mobile: 48px;
+$gap-second-desktop: 48px;
+$gap-second-tablette: 40px;
+$gap-second-mobile: 32px;
+$gap-list: 16px;
+$gap-row: 16px;
+$gap-text: 24px;
 
-@mixin card ($width) {
-    width: $width;
-    border-radius: $border-card;
-    border: 4px solid $accent-color;
-    background-color: $white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+$padding-section: 40px 24px;
+$padding-section-tablette: 32px 16px;
+$padding-section-mobile: 24px 12px;
+
+$padding-card: 24px;
+$padding-card-tablette: 20px;
+$padding-card-mobile: 16px;
+
+$padding-button: 16px 32px;
+$padding-button-tablette: 12px 24px;
+$padding-button-mobile: 8px 16px;
+
+$padding-row: 16px;
+
+$padding-nav: 16px 32px;
+
+$padding-header-hero: 64px 32px;   
+$padding-header-hero-tablette: 48px 24px;
+$padding-header-hero-mobile: 32px 16px;
+$gap-title: 24px;
+
+// Nav
+$shadow-nav: 0px 2px 4px rgba(56, 113,135 , 0.25);
+$nav-height: 64px;
+
+// Buttons
+@mixin button-main ($padding) {
+    background-color: $main-color;
+    color: $white;
+    padding: $padding;
+    border: none;
+    border-radius: 6px;
+    font-family: "Source Sans 3", sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
     transition: $transition;
-    padding: $paddin-card;
     &:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        background-color: darken($main-color, 10%);
+        color: lighten($white, 10%);
+        transform: scale(1.1);
+    }
+}
+@mixin button-second ($padding) {
+    color: $main-color;
+    padding: $padding;
+    border: 2px solid $main-color;
+    background-color: transparent;
+    border-radius: 6px;
+    font-family: "Source Sans 3", sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: $transition;
+    &:hover {
+        background-color: $main-color;
+        color: $white;
+        transform: scale(1.1);
+    }
+}
+@mixin button-cta ($padding) {
+    color: $white;
+    background-color: $second-color;
+    padding: $padding;
+    border: none;
+    border-radius: 6px;
+    font-family: "Source Sans 3", sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: $transition;
+    &:hover {
+        background-color: #C55A42; // Darken the second color
+        color: $white;
+        transform: scale(1.1);
+    }
+}
+@mixin button-gallery ($padding) {
+    background-color: lighten($main-color, 10%);
+    color: $white;
+    padding: $padding;
+    border: none;
+    border-radius: 6px;
+    font-family: "Source Sans 3", sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: $transition;
+    &:hover {
+        background-color: darken($main-color, 10%);
+        color: lighten($white, 10%);
+    }
+    &--active {
+        background-color: darken($main-color, 10%);
+        color: lighten($white, 10%);
     }
 }
 
-// FLexbox
+// Card
+@mixin card ($padding){
+    border: 1px solid #E0E0E0;
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: $padding;
+    box-shadow: 
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transition: $transition;
+    cursor: pointer;
+}
+$padding-card: 24px;
+$padding-card-tablette: 20px;
+$padding-card-mobile: 16px;
+$shadow-card: 0 2px 8px rgba(0,0,0,0.1);
+$border-radius-card: 8px;
+
+// Formulaire
+$gap-form: 16px;
+$gap-label: 8px;
+@mixin form-input ($color){
+    width: 100%;
+    background: $white;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    padding: 12px 16px;
+    outline: none;
+    box-shadow:
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transition: $transition;
+    @include font-p($color);
+    &:focus {
+        box-shadow: 0 0 0 3px rgba(56,113,135,0.1);
+        border: 2px solid darken($main-color, 10%);
+    }
+}
+
+// Flexbox
+@mixin center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 @mixin flex ($direction, $justify, $align, $gap) {
     display: flex;
     flex-direction: $direction;
@@ -61,15 +270,7 @@ $padding-big-card: 64px 32px;
     gap: $gap;
 }
 
-// Button
-@mixin border-button {
-    border: none;
-    border-radius: 50px;
-}
-$padding-button: 16px 32px;
-$padding-button-little: 4px 8px;
-
-// Transitions
+// Transitions - animations
 $transition: all 0.3s ease-in-out;
 
 // Keyframes

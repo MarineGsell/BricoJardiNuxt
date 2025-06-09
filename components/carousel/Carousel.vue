@@ -64,19 +64,19 @@ const goToNext = () => {
             overflow: hidden;
             &__slide {
                 position: absolute;
-                transition: all 0.5 ease-in-out;
+                transition: $transition;
             }
         }
         &__arrows {
             height: 40px;
             width: 40px;
             opacity: 0.3;
+            color: $main-color;
             @include flex(row, center, center, 0);
             &:hover {
                 opacity: 1;
                 cursor: pointer;
-                transition: all 5 ease-in-out;
-
+                transition: $transition;
             }
         }
     }
@@ -85,7 +85,7 @@ const goToNext = () => {
 // Animation pour la transition vers la droite
 .slide-right-enter-active,
 .slide-right-leave-active {
-  transition: all 0.5s ease-in-out;
+  transition: $transition;
 }
 .slide-right-enter-from {
     transform: translateX(-100%);
@@ -99,7 +99,7 @@ const goToNext = () => {
 // Animation pour la transition vers la gauche
 .slide-left-enter-active,
 .slide-left-leave-active {
-  transition: all 0.5s ease-in-out;
+  transition: $transition;
 }
 .slide-left-enter-from {
     transform: translateX(100%);

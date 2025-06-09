@@ -23,7 +23,7 @@ title: {
     width: 100%;
     background-position: center;
     background-size: cover;
-    border-radius: $border-card;
+    border-radius: $border-radius-card;
     cursor: pointer;
     transition: $transition;
     &:hover {
@@ -34,7 +34,7 @@ title: {
         width: 100%;
         opacity: 0;
         background-color: $overlay;
-        border-radius: $border-card;
+        border-radius: $border-radius-card;
         transition: $transition;
         &:hover {
             opacity: 1;
@@ -42,11 +42,16 @@ title: {
         &__title {
             height: 100%;
             width: 100%;
-            color: $white;
-            padding: 16px;
+            padding: $padding-card;
             opacity: 0;
             transition: $transition;
-            @include font(18px, 600);
+            @include font-p($white);
+            @include responsive-tablette {
+                padding: $padding-card-tablette;
+            }
+            @include responsive-mobile {
+                padding: $padding-card-mobile;
+            }
             @include flex(row, start, end, 0);
             &:hover {
                 opacity: 1;

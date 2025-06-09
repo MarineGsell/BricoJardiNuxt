@@ -25,16 +25,30 @@
 
 .headerhero {
     margin-top: $margin-top;
-    padding: 64px 0;
+    padding: $padding-header-hero;
     background-image: $round-gradient;
     color: $white;
-    @include flex (column, start, center, 56px);
+    @include flex (column, start, center, $gap-second-desktop);
+    @include responsive-tablette {
+        padding: $padding-header-hero-tablette;
+        @include flex (column, center, center, $gap-second-tablette);
+    }
+    @include responsive-mobile {
+        padding: $padding-header-hero-mobile;
+        @include flex (column, center, center, $gap-second-mobile);
+    }
     &__title {
         width: 70%;
-        @include flex (column, center, center, 24px);
+        @include flex (column, center, center, $gap-title);
+        @include responsive-tablette {
+            width: 100%;
+        }
+        @include responsive-mobile {
+            width: 100%;
+        }
         &__text {
             text-align: center;
-            @include font(64px, 700);
+            @include font-h1($white);
         }
         &__anim {
             height: 88px;
@@ -53,10 +67,22 @@
     &__subtitle {
         width: 50%;
         text-align: center;
-        @include font(18px, 400)
+        @include font-p($white);    
+        @include responsive-tablette {
+            width: 100%;
+        }
+        @include responsive-mobile {
+            width: 100%;
+        }
     }
     &__buttons {
-        @include flex (row, center, center, 56px)
+        @include flex (row, center, center, $gap-second-desktop);
+        @include responsive-tablette {
+            @include flex (column, center, center, $gap-second-tablette);
+        }
+        @include responsive-mobile {
+            @include flex (column, center, center, $gap-second-mobile);
+        }
     }
 }
 </style>

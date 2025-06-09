@@ -26,24 +26,22 @@ const props = defineProps({
 <style lang="scss" scoped>
 .banner {
     min-height: 400px;
-    color: $white;
     background-color: $main-color;
-    padding: 0 120px;
-    @include flex(column, center, center, 40px);
+    @include flex(column, center, center, $gap-text);
     &__header {
-        @include flex(column, center, center, 16px);
+        @include flex(column, center, center, $gap-text);
         &__title {
             text-transform: uppercase;
-            @include font(48px, 700)
+            @include font-h1($white);
         }
         &__subtitle {
             text-align: center;
-            @include font(32px, 700);
+            @include font-h2($white);
         }
     }
     &__text {
         text-align: center;
-        @include font(18px, 400);
+        @include font-p($white);
     }
 }
 </style>

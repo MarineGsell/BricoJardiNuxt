@@ -12,21 +12,15 @@ const props = defineProps ({
     </button>
 </template>
 <style lang="scss" scoped>
-
 .button {
-    background-color: $white;
-    color: $accent-color;
-    padding: $padding-button;
-    cursor: pointer;
-    @include border-button;
-    &:hover {
-        transform: scale(1.1);
-        transition: all 0.3s ease-in-out;
+    @include button-cta ($padding-button);
+    @include responsive-tablette {
+        @include button-cta ($padding-button-tablette);
+    }
+    @include responsive-mobile {
+        @include button-cta ($padding-button-mobile);
     }
     &__link {
         text-decoration: none;
-        color: $accent-color;
-        @include font(18px, 600);
     }
-}
-</style>
+}</style>

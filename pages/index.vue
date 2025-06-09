@@ -35,13 +35,6 @@ const perso = servicesList.filter(service => service.categorie === "autre");
                 :services="travauxInt"
                 title="Travaux intérieurs"
                 ></ServicesCard>
-                <!-- <Card
-                    v-for="service in servicesList"
-                    :key="service.id"
-                    :icon="service.icon"
-                    :title="service.title"
-                    :subtitle="service.subtitle"
-                /> -->
             </div>
             <BigCard
                 v-if="perso.length"
@@ -55,7 +48,7 @@ const perso = servicesList.filter(service => service.categorie === "autre");
                 <ButtonsAccent to="/contact">Devis gratuit</ButtonsAccent>
             </div>
         </section>
-                <section class="realisations">
+        <section class="realisations">
             <div class="realisations__container">
                 <h2 class="realisations__container__title">Des réalisations sur mesures</h2>
                 <p class="realisations__container__subtitle">Découvrez nos projets terminés qui témoignent du savoir-faire et de l'engagement qualité de Brico Jardi. Chaque réalisation illustre notre capacité à transformer vos idées en réalité, qu'il s'agisse d'aménagements extérieurs, d'entretien de jardin ou de travaux intérieurs. Laissez-vous inspirer par ces exemples concrets de notre expertise au service de votre satisfaction.</p>
@@ -66,77 +59,104 @@ const perso = servicesList.filter(service => service.categorie === "autre");
                 </div>
             </div>
         </section>
-        <section class="contact">
-            <Contact 
-            />
-        </section>
+        <Contact 
+            colorTitle="#387187"
+            colorText="##2E2E2E"
+            bgColor="#FFFFFF"
+        />
     </div>
 </template>
 <style lang="scss" scoped>
 .about {
     width: 80%;
     margin: auto;
-    padding: 64px 0;
-    @include flex(column, center, center, 56px);
+    margin-top: $margin-top;
+    padding: $padding-section;
+    @include flex(column, center, center, $gap-main-desktop);
+    @include responsive-tablette {
+        padding: $padding-section-tablette;
+        @include flex(column, center, center, $gap-main-tablette);
+    }
+    @include responsive-mobile {
+        padding: $padding-section-mobile;
+        @include flex(column, center, center, $gap-main-mobile);
+    }
     &__header {
-       @include flex(column, center, center, 16px);
+       @include flex(column, center, center, 0);
         &__title {
-            color: $main-color;
-            text-transform: uppercase;
-            @include font(48px, 700)
+            @include font-h2($main-color);
         }
         &__subtitle {
-            color: $main-color;
-            @include font(32px, 700)
+            @include font-h3($main-color);
         }
     }
     &__text {
         text-align: center;
-        @include font(18px, 400)
+        @include font-p($text-color-main);
     }
 }
 .services {
     width: 80%;
     margin: auto;
-    padding: 64px 0;
-    @include flex(column, center, center, 56px);
+    padding: $padding-section;
+    @include flex(column, center, center, $gap-main-desktop);
+    @include responsive-tablette {
+        padding: $padding-section-tablette;
+        @include flex(column, center, center, $gap-main-tablette);
+    }
+    @include responsive-mobile {
+        padding: $padding-section-mobile;
+        @include flex(column, center, center, $gap-main-mobile);
+    }
     &__title {
-        color: $main-color;
-        text-transform: uppercase;
-        @include font(48px, 700)
+        @include font-h2($main-color);
     }
     &__subtitle {
-        @include font(18px, 400)
+        @include font-p($text-color-main);
     }
     &__cards {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 32px;
+        gap: $gap-second-desktop;
+        @include responsive-tablette {
+            gap: $gap-second-tablette;
+        }
+        @include responsive-mobile {
+            grid-template-columns: 1fr;
+            gap: $gap-second-mobile;
+        }
     }
 }
 .realisations {
-    background-color: $main-color;
     &__container {
         width: 80%;
         margin: auto;
-        padding: 64px 0;
-        color: $white;
-        @include flex(column, center, center, 56px);
+        padding: $padding-section;
+        @include flex(column, center, center, $gap-main-desktop);
+        @include responsive-tablette {
+            padding: $padding-section-tablette;
+            @include flex(column, center, center, $gap-main-tablette);
+        }
+        @include responsive-mobile {
+            padding: $padding-section-mobile;
+            @include flex(column, center, center, $gap-main-mobile);
+        }
         &__title {
-            text-transform: uppercase;
-            @include font(48px, 700)
+            @include font-h2($main-color);
         }
         &__subtitle {
-            @include font(18px, 400)
+            @include font-p($text-color-main);
         }
         &__buttons {
-            @include flex (row, center, center, 56px);
+            @include flex (row, center, center, $gap-second-desktop);
+            @include responsive-tablette {
+                @include flex (row, center, center, $gap-second-tablette);
+            }
+            @include responsive-mobile {
+                @include flex (row, center, center, $gap-second-mobile);
+            }
         }
     }
-}
-.contact {
-    background-color: $main-color;
-    color: $white;
 }
 
 </style>

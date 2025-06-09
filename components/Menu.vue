@@ -26,41 +26,12 @@ const props = defineProps({
 .menu {
     width: auto;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include center;
     &__item {
         padding: 0 16px;
         @include flex (row, center, center, 0);
         &__link {
-            display: block;
-            width: auto;
-            text-decoration: none;
-            position: relative;
-            color: $main-color;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin: 0 16px;
-            font-size: 16px;
-            line-height: 26px;
-            &:hover {
-                color: $second-color;
-                border-bottom: $second-color;
-            }
-            &::after {
-                content: "";
-                position: absolute;
-                background: $second-color;
-                height: 3px;
-                width: 100%;
-                left: 0;
-                bottom: -8px;
-                transform: scale(0);
-                transition: transform 0.3s ease-in-out;
-            }
-            &:hover::after {
-                transform: scale(1);
-            }
+            @include font-link;
         }
     }
 }

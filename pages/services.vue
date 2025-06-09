@@ -52,6 +52,7 @@ const perso = servicesList.filter(service => service.categorie === "autre");
 .services {
     margin-top: $margin-top;
     margin-bottom: $margin-bottom;
+    @include center;
 }
 
 </style>

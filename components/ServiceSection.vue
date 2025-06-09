@@ -56,36 +56,59 @@ const props = defineProps({
 </template>
 <style lang="scss" scoped>
 .box {
-    padding: 80px 120px;
-    @include flex(column, center, center, 40px);
+    padding: $padding-section;
+    @include flex(column, center, center, $gap-main-desktop);
+    @include responsive-tablette {
+        padding: $padding-section-tablette;
+        @include flex(column, center, center, $gap-main-tablette);
+    }
+    @include responsive-mobile {
+        padding: $padding-section-mobile;
+        @include flex(column, center, center, $gap-main-mobile);
+    }
     &__service {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-        &__img {
-            height: 560px;
-            width: 560px;
-            object-fit: cover;
-            object-position: center;
+    @include center;
+    gap: $gap-second-desktop;
+    @include responsive-tablette {
+        gap: $gap-second-tablette;
+    }
+    @include responsive-mobile {
+        gap: $gap-second-mobile;
+    }
+    &__img {
+        height: 560px;
+        width: 560px;
+        object-fit: cover;
+        object-position: center;
+    }
+    &__content {
+        @include flex(column, normal, normal, $gap-second-desktop);
+        @include responsive-tablette {
+            @include flex(column, normal, normal, $gap-second-tablette);
         }
-        &__content {
-            @include flex(column, normal, normal, 40px);
-            &__item {
-                &__title {
+        @include responsive-mobile {
+            @include flex(column, normal, normal, $gap-second-mobile);
+        }
+        &__item {
+            &__title {
                     color: $second-color;
-                    margin-bottom: 16px;
-                    @include flex(row, left, center, 16px);
+                    @include flex(row, left, center, $gap-row);
                     &__icon {
-                        height: 40px;
+                        height: $icons-height;
                     }
                     &__text {
-                        @include font(24px, 600) 
+                        @include font-h3($text-color-main); 
                     }
                 }
                 &__text {
-                    margin-bottom: 40px;
-                    @include font(18px, 400)
+                    margin-bottom: $gap-second-desktop;
+                    @include font-p($text-color-main);
+                    @include responsive-tablette {
+                        margin-bottom: $gap-second-tablette;
+                    }
+                    @include responsive-mobile {
+                        margin-bottom: $gap-second-mobile;
+                    }
                 }
                 &__line {
                     color: $second-color;
