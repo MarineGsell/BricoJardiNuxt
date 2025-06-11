@@ -5,7 +5,6 @@ const props = defineProps ({
         required: true
     }
 });
-
 </script>
 <template>
     <button class="button">
@@ -14,16 +13,16 @@ const props = defineProps ({
 </template>
 <style lang="scss" scoped>
 .button {
-    @include button-main ($padding-button);
+    @include button-hero ($padding-button);
     @include responsive-tablette {
-        @include button-main ($padding-button-tablette);
+        @include button-hero ($padding-button-tablette);
     }
     @include responsive-mobile {
-        @include button-main ($padding-button-mobile);
+        @include button-hero ($padding-button-mobile);
     }
     &__link {
         text-decoration: none;
-        color: $white;
+        color: $main-color;
     }
 }
 </style>

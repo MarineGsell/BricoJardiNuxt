@@ -23,7 +23,7 @@ const props = defineProps({
         <BorderAnimation />
         <h2 class="card__title">{{title}}</h2>
         <p class="card__text">{{text}}</p>
-        <ButtonsAccent class="card__button" :to="ctaLink">{{ ctaText }}</ButtonsAccent>
+        <ButtonsCta class="card__button" :to="ctaLink">{{ ctaText }}</ButtonsCta>
     </div>
 </template>
 <style lang="scss" scoped>

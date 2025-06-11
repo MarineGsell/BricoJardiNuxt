@@ -2,7 +2,7 @@
 // Data
 import carouselItems from '@/data/carouselItems'
 
-const currentItem = ref(1)
+const currentItem = ref(0)
 const direction = ref('right')
 
 const goToPrev = () => {
@@ -31,19 +31,18 @@ const goToNext = () => {
                 @click="goToPrev"
                 class="carousel__container__arrows"
             />
-            <TransitionGroup 
-                :name="direction === 'right' ? 'slide-right' : 'slide-left'" 
-                tag="div"
-                class="carousel__container__current"
-            >
-                <CarouselSlide 
-                    v-show="currentItem === index"
-                    v-for="(carouselItem, index) in carouselItems"
-                    :key="carouselItem.id"
+            <div class="carousel__container__current">
+                <Transition
+                    :name="direction === 'right' ? 'slide-right' : 'slide-left'" 
+                    mode="out-in"
+                >
+                    <CarouselSlide 
+                    :key="currentItem"
                     class="carousel__container__current__slide"
-                    :bgImg="carouselItem.image"
-                />
-            </TransitionGroup>
+                    :bgImg="carouselItems[currentItem].image"
+                    />
+                </Transition>
+            </div>
             <CarouselArrowsNext 
                 @click="goToNext"
                 class="carousel__container__arrows"
@@ -64,6 +63,10 @@ const goToNext = () => {
             overflow: hidden;
             &__slide {
                 position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
                 transition: $transition;
             }
         }

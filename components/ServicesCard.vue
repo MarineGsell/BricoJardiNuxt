@@ -48,7 +48,7 @@ const props = defineProps({
         @include flex(column, normal, normal, $gap-second-mobile);
     }
     &:hover {
-        height: 240px;
+        height: 350px;
         border-radius: 0;
         .card__title {
             color: $second-color;
@@ -71,7 +71,7 @@ const props = defineProps({
     &__header {
         @include center;
         flex-shrink: 0;
-        height: 119px;
+        height: 79px;
         &__title {
             text-align: center;
             @include font-h3($main-color);

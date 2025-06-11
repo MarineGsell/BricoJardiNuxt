@@ -22,5 +22,6 @@ const props = defineProps ({
     }
     &__link {
         text-decoration: none;
+        color: $white;
     }
 }</style>

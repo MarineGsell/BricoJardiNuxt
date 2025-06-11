@@ -70,6 +70,7 @@ const props = defineProps({
         }
     }
     &__content {
+        width: 100%;
         @include flex(row, center, start, $gap-main-desktop);
         @include responsive-tablette {
             @include flex(row, center, start, $gap-main-tablette);
@@ -78,7 +79,7 @@ const props = defineProps({
             @include flex(column, center, center, $gap-main-mobile);
         }
         &__info {
-            width: 100%;
+            width: 30%;
             @include flex(column, center, center, 0);
             &__items {
                 @include flex(column, center, start, $gap-second-desktop);
@@ -111,6 +112,9 @@ const props = defineProps({
                     }
                 }
             }
+        }
+        &__form {
+            width: 70%;;
         }
     }
 }
