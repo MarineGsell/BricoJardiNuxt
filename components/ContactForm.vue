@@ -27,10 +27,10 @@
                 <textarea name="" id="" rows="5" placeholder="Votre message..." class="form__div__label__input" />
             </label>
         </div>
-        <ButtonsAccent 
+        <ButtonsMain 
             class="form__button"
             type="submit"
-        >Envoyer</ButtonsAccent>
+        >Envoyer</ButtonsMain>
     </form>
 </template>
 <style lang="scss" scoped>

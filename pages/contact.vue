@@ -39,18 +39,11 @@
 <style lang="scss" scoped>
 .contact {
     margin-top: $margin-top;
-    padding: $padding-section;
-    @include responsive-tablette {
-        padding: $padding-section-tablette;
-    }
-    @include responsive-mobile {
-        padding: $padding-section-mobile;
-    }
     &__banner {
         width: 100%;
     }
     &__zone {
-        width: 80%;
+        @include padding-div;
         @include flex(row, center, center, $gap-main-desktop);
         @include responsive-tablette {
             width: 100%;

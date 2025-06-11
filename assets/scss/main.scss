@@ -115,9 +115,14 @@ $gap-list: 16px;
 $gap-row: 16px;
 $gap-text: 24px;
 
-$padding-section: 40px 24px;
+$padding-section: 40px 0px;
 $padding-section-tablette: 32px 16px;
 $padding-section-mobile: 24px 12px;
+@mixin padding-div {
+    max-width: 1024px;
+    width: 80%;
+    margin: auto;
+}
 
 $padding-card: 24px;
 $padding-card-tablette: 20px;

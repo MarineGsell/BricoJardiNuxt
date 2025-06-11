@@ -49,9 +49,9 @@ const props = defineProps({
 </template>
 <style lang="scss" scoped>
 .contact {
+    @include padding-div;
+    @include flex(column, center, center, $gap-second-desktop);
     &__header {
-        width: 80%;
-        margin: auto;
         @include flex(column, center, center, $gap-second-desktop);
         @include responsive-tablette {
             @include flex(column, center, center, $gap-second-tablette);
@@ -70,9 +70,6 @@ const props = defineProps({
         }
     }
     &__content {
-        width: 80%;
-        margin: auto;
-        padding: 64px 0;
         @include flex(row, center, start, $gap-main-desktop);
         @include responsive-tablette {
             @include flex(row, center, start, $gap-main-tablette);
