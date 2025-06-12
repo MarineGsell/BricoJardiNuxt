@@ -63,15 +63,25 @@ const closeModale = () => {
 .gallery {
     width: 100%;
     margin-bottom: 64px;
-    @include flex(column, center, center, 64px);
-    &__filters {
-        @include flex(row, center, center, 48px);
+    @include flex(column, center, center, $gap-main-desktop);
+    @include responsive-tablette {
+        @include flex(column, center, center, $gap-main-tablette);
+    }
+    @include responsive-mobile {
+        @include flex(column, center, center, $gap-main-mobile);
     }
     &__content {
         width: 80%;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
+        gap: $gap-second-desktop;
+        @include responsive-tablette {
+        gap: $gap-second-tablette;
+        }   
+        @include responsive-mobile {
+            grid-template-columns: repeat(1, 1fr);
+            gap: $gap-second-mobile;
+        }
     }
 }
 </style>

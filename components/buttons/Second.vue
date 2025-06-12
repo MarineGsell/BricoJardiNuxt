@@ -5,7 +5,6 @@ const props = defineProps ({
         required: true
     }
 });
-
 </script>
 <template>
     <button class="button">
@@ -13,21 +12,17 @@ const props = defineProps ({
     </button>
 </template>
 <style lang="scss" scoped>
-
 .button {
-    background-color: $accent-color;
-    color: $white;
-    padding: $padding-button;
-    cursor: pointer;
-    @include border-button;
-    &:hover {
-        transform: scale(1.1);
-        transition: all 0.3s ease-in-out;
+    @include button-second ($padding-button);
+    @include responsive-tablette {
+        @include button-second ($padding-button-tablette);
+    }
+    @include responsive-mobile {
+        @include button-second ($padding-button-mobile);
     }
     &__link {
         text-decoration: none;
         color: $white;
-        @include font(18px, 600);
     }
 }
 </style>

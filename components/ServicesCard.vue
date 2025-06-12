@@ -37,20 +37,20 @@ const props = defineProps({
     width: 100%;
     height: 119px;
     overflow: hidden;
-    padding: $paddin-card;
-    background-color: $white;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    box-shadow:
-    0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    transition: $transition;
-    cursor: pointer;
-    @include flex(column, normal, normal, 32px);
+    @include card ($padding-card);
+    @include flex(column, normal, normal, $gap-second-desktop);
+    @include responsive-tablette {
+        @include card($padding-card-tablette);
+        @include flex(column, normal, normal, $gap-second-tablette);
+    }
+    @include responsive-mobile {
+        @include card($padding-card-mobile);
+        @include flex(column, normal, normal, $gap-second-mobile);
+    }
     &:hover {
-        height: 320px;
+        height: 350px;
         border-radius: 0;
-        .card__header__title {
+        .card__title {
             color: $second-color;
         }
     }
@@ -63,32 +63,31 @@ const props = defineProps({
         left: 0;
         top: 0;
         transform: scale(0);
-        transition: transform 0.3s ease-in-out;
+        transition: $transition;
     }
     &:hover::after {
         transform: scale(1);
     }
     &__header {
-        @include flex(column, center, center, 0);
+        @include center;
         flex-shrink: 0;
-        height: 119px;
+        height: 79px;
         &__title {
-            color: $main-color;
             text-align: center;
-            @include font(24px, 700);
+            @include font-h3($main-color);
         }
     }
     &__content {
         list-style: none;
-        @include flex(column, left, normal, 16px);
+        @include flex(column, left, normal, $gap-list);
         &__item {
-            @include flex(row, left, center, 16px);
+            @include flex(row, left, center, $gap-list);
             &__icon {
                 color: $second-color;
-                height: 32px;
+                height: $icons-height;
             }
             &__text {
-                @include font(18px, 400);
+                @include font-p($text-color-main);
             }
         }
     }

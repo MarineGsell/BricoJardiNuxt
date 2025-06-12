@@ -2,7 +2,7 @@
 // Data
 import carouselItems from '@/data/carouselItems'
 
-const currentItem = ref(1)
+const currentItem = ref(0)
 const direction = ref('right')
 
 const goToPrev = () => {
@@ -31,19 +31,18 @@ const goToNext = () => {
                 @click="goToPrev"
                 class="carousel__container__arrows"
             />
-            <TransitionGroup 
-                :name="direction === 'right' ? 'slide-right' : 'slide-left'" 
-                tag="div"
-                class="carousel__container__current"
-            >
-                <CarouselSlide 
-                    v-show="currentItem === index"
-                    v-for="(carouselItem, index) in carouselItems"
-                    :key="carouselItem.id"
+            <div class="carousel__container__current">
+                <Transition
+                    :name="direction === 'right' ? 'slide-right' : 'slide-left'" 
+                    mode="out-in"
+                >
+                    <CarouselSlide 
+                    :key="currentItem"
                     class="carousel__container__current__slide"
-                    :bgImg="carouselItem.image"
-                />
-            </TransitionGroup>
+                    :bgImg="carouselItems[currentItem].image"
+                    />
+                </Transition>
+            </div>
             <CarouselArrowsNext 
                 @click="goToNext"
                 class="carousel__container__arrows"
@@ -64,19 +63,23 @@ const goToNext = () => {
             overflow: hidden;
             &__slide {
                 position: absolute;
-                transition: all 0.5 ease-in-out;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                transition: $transition;
             }
         }
         &__arrows {
             height: 40px;
             width: 40px;
             opacity: 0.3;
+            color: $main-color;
             @include flex(row, center, center, 0);
             &:hover {
                 opacity: 1;
                 cursor: pointer;
-                transition: all 5 ease-in-out;
-
+                transition: $transition;
             }
         }
     }
@@ -85,10 +88,9 @@ const goToNext = () => {
 // Animation pour la transition vers la droite
 .slide-right-enter-active,
 .slide-right-leave-active {
-  transition: all 0.5s ease-in-out;
+  transition: $transition-carousel;
 }
 .slide-right-enter-from {
-    transform: translateX(-100%);
     opacity: 0;
 }
 .slide-right-leave-to {
@@ -99,10 +101,9 @@ const goToNext = () => {
 // Animation pour la transition vers la gauche
 .slide-left-enter-active,
 .slide-left-leave-active {
-  transition: all 0.5s ease-in-out;
+  transition: $transition-carousel;
 }
 .slide-left-enter-from {
-    transform: translateX(100%);
     opacity: 0;
 }
 .slide-left-leave-to {

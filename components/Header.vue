@@ -29,12 +29,11 @@
 
 <style lang="scss" scoped>
 .nav {
-    @include font(18px, 500);
     &__bar{
         background-color: $white;
-        height: 64px;
-        padding: 0 32px;
-        box-shadow: 0px 2px 4px rgba(56, 113,135 , 0.25);
+        height: $nav-height;
+        padding: $padding-nav;
+        box-shadow: $shadow-nav;
         color: $main-color;
         position: fixed;
         top: 0;
@@ -44,15 +43,20 @@
         @include flex (row, space-between, center, 0);
         &__logo {
             &__img {
-                height: 40px;
+                height: $icons-height;
                 width: auto;
+                @include center;
             }
         }
         &__hamburger {
             display: none;
-            @include responsive-mobile {
-                display: flex;
+            @include responsive-tablette {
                 width: 30px;
+                @include center;
+            }
+            @include responsive-mobile {
+                width: 30px;
+                @include center;
             }
         }
         &__menu {
@@ -64,9 +68,10 @@
             @include flex (row, center, center, 12px);
             &__link {
                 &__icon {
-                    height: 24px;
+                    height: $icons-height;
                     width: auto;
                     color: $main-color;
+                    @include center;
                 }
             }
         }

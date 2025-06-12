@@ -7,6 +7,12 @@
 </template>
 <style lang="scss" scoped>
 .filterBar {
-    @include flex(row, center, center, 48px)
+    @include flex(row, center, center, $gap-second-desktop);
+    @include responsive-tablette {
+            @include flex(row, center, center, $gap-second-tablette);
+        }
+        @include responsive-mobile {
+            @include flex(row, center, center, $gap-second-mobile);
+        }
 }
 </style>

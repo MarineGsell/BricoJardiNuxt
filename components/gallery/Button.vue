@@ -27,18 +27,15 @@ const handleClick = () => {
 </template>
 <style lang="scss" scoped>
 .button {
-    background-color: $main-color-light;
-    color: $white;
-    padding: $padding-button;
-    cursor: pointer;
-    transition: $transition;
-    @include border-button;
-    @include font(18px, 400);
-    &:hover {
-        background-color: $main-color-dark;
+    @include button-gallery ($padding-button);
+    @include responsive-tablette {
+        @include button-gallery ($padding-button-tablette);
     }
-    &--active {
-        background-color: $main-color-dark;
+    @include responsive-mobile {
+        @include button-gallery ($padding-button-mobile);
+    }
+    &__link {
+        text-decoration: none;
     }
 }
 </style>

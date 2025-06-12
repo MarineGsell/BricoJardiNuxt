@@ -8,9 +8,18 @@
         <GalleryMain />
     </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 .realisations {
     margin-top: $margin-top;
-    @include flex(column, center, center, 64px)
+    padding: $padding-section;
+    // @include flex(column, center, center, $gap-section);
+    // @include responsive-tablette {
+    //     padding: $padding-section-tablette;
+    //     @include flex(column, center, center, $gap-section-tablette);
+    // }
+    // @include responsive-mobile {
+    //     padding: $padding-section-mobile;
+    //     @include flex(column, center, center, $gap-section-mobile);
+    // }
 }
 </style>

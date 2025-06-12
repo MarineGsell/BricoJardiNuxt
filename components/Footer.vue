@@ -13,13 +13,19 @@
     height: 400px;
     background-color: $main-color;
     color: $white;
-    @include flex(column, center, center, 24px);
+    @include flex(column, center, center, $gap-second-desktop);
+    @include responsive-tablette {
+        @include flex(column, center, center, $gap-second-tablette);
+    }
+    @include responsive-mobile {
+        @include flex(column, center, center, $gap-second-mobile);
+    }
     &__logo {
-        height: 64px;
+        height: $logo-height;
         width: auto;
     }
     &__text {
-        @include font(18px, 400)
+        @include font-p($white);
     }
 }
 </style>

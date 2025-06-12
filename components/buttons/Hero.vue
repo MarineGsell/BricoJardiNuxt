@@ -13,19 +13,16 @@ const props = defineProps ({
 </template>
 <style lang="scss" scoped>
 .button {
-    background-color: $second-color;
-    color: $white;
-    padding: $padding-button-little;
-    cursor: pointer;
-    @include border-button;
-    &:hover {
-        transform: scale(1.1);
-        transition: all 0.3s ease-in-out;
+    @include button-hero ($padding-button);
+    @include responsive-tablette {
+        @include button-hero ($padding-button-tablette);
+    }
+    @include responsive-mobile {
+        @include button-hero ($padding-button-mobile);
     }
     &__link {
         text-decoration: none;
-        color: $white;
-        @include font(14px, 600);
+        color: $main-color;
     }
 }
 </style>

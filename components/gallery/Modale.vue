@@ -57,7 +57,7 @@ const works = computed(() => props.realisation.travaux)
         translate: -50% -50%;
         border-radius: 5px;
         padding: 32px 64px;
-        @include flex(column, start, start, 16px);
+        @include flex(column, start, start, $gap-list);
         &__button {
             background-color: $second-color;
             color: $white;
@@ -67,7 +67,7 @@ const works = computed(() => props.realisation.travaux)
             top: 8px;
             right: 8px;
             cursor: pointer;
-            @include font(18px, 600);
+            @include font-p($white);
         }
         &__img {
             width: 100%;
@@ -79,19 +79,18 @@ const works = computed(() => props.realisation.travaux)
         }
         &__title {
             width: 100%;
-            color: $main-color;
             text-align: center;
-            @include font(24px, 600);
+            @include font-h3($main-color);
         }
         &__list {
             list-style: none;
             &__item {
-                @include flex(row, start, center, 16px);
+                @include flex(row, start, center, $gap-list);
                 &__icon {
                     color: $second-color;
                 }
                 &__text {
-                    @include font(16px, 400);
+                    @include font-p($text-color-main);
                 }
             }
         }

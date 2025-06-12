@@ -30,16 +30,16 @@ const props = defineProps({
     width: 100%;
     height: 74px;
     overflow: hidden;
-    padding: $paddin-card;
-    background-color: $white;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    box-shadow:
-    0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    transition: $transition;
-    cursor: pointer;
-    @include flex(column, normal, normal, 32px);
+    @include card ($padding-card);
+    @include flex(column, normal, normal, $second-gap-desktop);
+    @include responsive-tablette {
+        @include card($padding-card-tablette);
+        @include flex(column, normal, normal, $second-gap-tablette);
+    }
+    @include responsive-mobile {
+        @include card($padding-card-mobile);
+        @include flex(column, normal, normal, $second-gap-mobile);
+    }
     &:hover {
         height: 240px;
         border-radius: 0;
@@ -56,23 +56,23 @@ const props = defineProps({
         left: 0;
         top: 0;
         transform: scale(0);
-        transition: transform 0.3s ease-in-out;
+        transition: $transition;
     }
     &:hover::after {
         transform: scale(1);
     }
     &__title {
         color: $main-color;
-        @include flex(row, left, center, 16px);
+        @include flex(row, left, center, $padding-row);
         &__icon {
             height: 40px;
         }
         &__text {
-            @include font(18px, 700) 
+            @include font-h3;
         }
     }
     &__content {
-        @include font(16px, 400)
+        @include font-p($text-color-main);
     }
 }
 </style>

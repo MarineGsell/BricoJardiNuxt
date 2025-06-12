@@ -21,9 +21,9 @@ const props = defineProps({
 <template>
     <div class="card">
         <BorderAnimation />
-        <h1 class="card__title">{{title}}</h1>
+        <h2 class="card__title">{{title}}</h2>
         <p class="card__text">{{text}}</p>
-        <ButtonsAccent class="card__button" :to="ctaLink">{{ ctaText }}</ButtonsAccent>
+        <ButtonsCta class="card__button" :to="ctaLink">{{ ctaText }}</ButtonsCta>
     </div>
 </template>
 <style lang="scss" scoped>
@@ -31,16 +31,16 @@ const props = defineProps({
     position: relative;
     width: 80%;
     margin: auto;
-    padding: $padding-big-card;
-    background-color: $white;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    box-shadow:
-    0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    transition: $transition;
-    cursor: pointer;
-    @include flex(column, center, center, 56px);
+    @include flex(column, center, center, $gap-second-desktop);
+    @include card($padding-card);
+    @include responsive-tablette {
+        @include card($padding-card-tablette);
+        @include flex(column, center, center, $gap-second-tablette);
+    }
+    @include responsive-mobile {
+        @include card($padding-card-mobile);
+        @include flex(column, center, center, $gap-second-mobile);
+    }
     &:hover {
         border-radius: 0;
         border: none;
@@ -48,7 +48,6 @@ const props = defineProps({
         :deep(.border) {
             transform: scale(1);
         }
-        
         :deep(.border-left),
         :deep(.border-right) {
             transform: scaleY(1);
@@ -58,14 +57,12 @@ const props = defineProps({
         }
     }
     &__title {
-        color: $main-color;
         text-align: center;
-        text-transform: uppercase;
         transition: $transition;
-        @include font(48px, 700);
+        @include font-h2($main-color);
     }
     &__text {
-        @include font(16px, 400)
+        @include font-p($text-color-main);
     }
     &__button {
         width: fit-content;

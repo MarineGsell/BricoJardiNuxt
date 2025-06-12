@@ -21,7 +21,7 @@
   position: absolute;
   background: $accent-color;
   transform: scale(0);
-  transition: transform 0.3s ease-in-out;
+  transition: $transition;
 }
 
 .border-top,
