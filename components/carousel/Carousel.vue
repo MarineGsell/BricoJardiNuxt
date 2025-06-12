@@ -88,10 +88,9 @@ const goToNext = () => {
 // Animation pour la transition vers la droite
 .slide-right-enter-active,
 .slide-right-leave-active {
-  transition: $transition;
+  transition: $transition-carousel;
 }
 .slide-right-enter-from {
-    transform: translateX(-100%);
     opacity: 0;
 }
 .slide-right-leave-to {
@@ -102,10 +101,9 @@ const goToNext = () => {
 // Animation pour la transition vers la gauche
 .slide-left-enter-active,
 .slide-left-leave-active {
-  transition: $transition;
+  transition: $transition-carousel;
 }
 .slide-left-enter-from {
-    transform: translateX(100%);
     opacity: 0;
 }
 .slide-left-leave-to {

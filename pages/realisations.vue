@@ -8,7 +8,7 @@
         <GalleryMain />
     </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 .realisations {
     margin-top: $margin-top;
     padding: $padding-section;

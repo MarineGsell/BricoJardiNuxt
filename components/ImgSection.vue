@@ -13,7 +13,8 @@ const props = defineProps({
 </template>
 <style lang="scss">
 .img {
-    height: 100vh;
+    height: 70vh;
+    width: 100%;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

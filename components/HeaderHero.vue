@@ -11,7 +11,7 @@ import { ButtonsCta } from '#components';
                 <h2 class="headerhero__title__anim__line">d'un jardin soigné</h2> 
                 <h2 class="headerhero__title__anim__line">de terrasses durables</h2>
                 <h2 class="headerhero__title__anim__line">de solutions uniques</h2> 
-                <h2 class="headerhero__title__anim__line">d'espaces verts parfaits</h2> 
+                <h2 class="headerhero__title__anim__line">d'espaces réinventés</h2> 
                 <h2 class="headerhero__title__anim__line">de murs impeccables</h2> 
             </div>
         </div>
@@ -30,6 +30,7 @@ import { ButtonsCta } from '#components';
     padding: $padding-header-hero;
     background-image: $round-gradient;
     color: $white;
+    min-height: 100vh;
     @include flex (column, start, center, $gap-second-desktop);
     @include responsive-tablette {
         padding: $padding-header-hero-tablette;

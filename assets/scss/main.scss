@@ -131,7 +131,11 @@ $logo-height: 64px;
 // Espacement et Layout
 $max-width: 1200px;
 $margin-top: 64px;
+$margin-top-tablette: 48px;
+$margin-top-mobile: 32px;
 $margin-bottom: 64px;
+$margin-bottom-tablette: 48px;
+$margin-bottom-mobile: 32px;
 $margin-side-desktop: 48px;
 $margin-side-mobile: 24px;
 
@@ -324,6 +328,7 @@ $gap-label: 8px;
 
 // Transitions - animations
 $transition: all 0.3s ease-in-out;
+$transition-carousel: all 0.5s ease-in-out;
 
 // Keyframes
 @keyframes fadeIn {

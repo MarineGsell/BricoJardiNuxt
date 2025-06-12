@@ -29,6 +29,8 @@ const props = defineProps({
                         <SvgIconEmail class="contact__content__info__items__item__icon" :style="{ color: colorTitle }"/>
                         <p class="contact__content__info__items__item__text">dgsell@hotmail.fr</p>
                     </li>
+                </ul>
+                <ul class="contact__content__info__items">
                     <li class="contact__content__info__items__item">
                         <NuxtLink to="/" class="contact__content__info__items__item__link">
                             <SvgIconFb class="contact__content__info__items__item__link__icon" :style="{ color: colorTitle }"/>
@@ -80,14 +82,22 @@ const props = defineProps({
         }
         &__info {
             width: 30%;
-            @include flex(column, center, center, 0);
+            @include flex(column, center, start, $gap-second-desktop);
+            @include responsive-tablette {
+                width: 100%;
+                @include flex(column, center, center, $gap-second-tablette);
+            }
+            @include responsive-mobile {
+                width: 100%;
+                @include flex(column, center, center, $gap-second-mobile);
+            }
             &__items {
                 @include flex(column, center, start, $gap-second-desktop);
                 @include responsive-tablette {
-                    @include flex(column, center, start, $gap-second-tablette);
+                    @include flex(row, center, start, $gap-second-tablette);
                 }   
                 @include responsive-mobile {
-                    @include flex(column, center, start, $gap-second-mobile);
+                    @include flex(row, center, start, $gap-second-mobile);
                 }
                 &__item {
                     @include flex(row, start, center, $gap-row);
@@ -114,7 +124,13 @@ const props = defineProps({
             }
         }
         &__form {
-            width: 70%;;
+            width: 70%;
+            @include responsive-tablette {
+                width: 100%;
+            }
+            @include responsive-mobile {
+                width: 100%;
+            }
         }
     }
 }

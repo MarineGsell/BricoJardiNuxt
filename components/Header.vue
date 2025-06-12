@@ -29,7 +29,6 @@
 
 <style lang="scss" scoped>
 .nav {
-    @include font-link;
     &__bar{
         background-color: $white;
         height: $nav-height;
@@ -51,9 +50,13 @@
         }
         &__hamburger {
             display: none;
-            @include responsive-mobile {
-                display: flex;
+            @include responsive-tablette {
                 width: 30px;
+                @include center;
+            }
+            @include responsive-mobile {
+                width: 30px;
+                @include center;
             }
         }
         &__menu {
