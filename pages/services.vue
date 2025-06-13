@@ -19,25 +19,22 @@ const perso = servicesList.filter(service => service.categorie === "autre");
 <template>
     <div class="services">
         <ServiceSection 
-            bannerTitle= "Aménagez votre extérieur"
-            bannerText= "Transformez votre espace extérieur en un lieu de vie à votre image, où confort et esthétique se conjuguent harmonieusement pour créer votre havre de paix personnalisé."
-            :flexDirection= "'row'"
+            sectionTitle= "Aménagez votre extérieur"
+            sectionText= "Transformez votre espace extérieur en un lieu de vie à votre image, où confort et esthétique se conjuguent harmonieusement pour créer votre havre de paix personnalisé."
             :imgService= "AmenagementExtImg"
             imgAlt= "photo aménagement extérieur"
             :services= amenagementExt
         />
         <ServiceSection 
-            bannerTitle= "Entretenez votre jardin"
-            bannerText= "Confiez l'entretien régulier de votre espace vert à des professionnels passionnés qui préserveront la beauté de votre jardin saison après saison, vous libérant du temps pour en profiter pleinement."
-            :flexDirection= "'row-reverse'"
+            sectionTitle= "Entretenez votre jardin"
+            sectionText= "Confiez l'entretien régulier de votre espace vert à des professionnels passionnés qui préserveront la beauté de votre jardin saison après saison, vous libérant du temps pour en profiter pleinement."
             :imgService= "EntretienExtImg"
             imgAlt= "photo entretien extérieur"
             :services= entretienExt
         />
         <ServiceSection 
-            bannerTitle= "Travaux intérieurs"
-            bannerText= "Donnez une nouvelle dimension à votre intérieur grâce à notre savoir-faire en rénovation et embellissement, pour un habitat qui vous ressemble et dans lequel vous vous sentirez parfaitement bien."
-            :flexDirection= "'row'"
+            sectionTitle= "Travaux intérieurs"
+            sectionText= "Donnez une nouvelle dimension à votre intérieur grâce à notre savoir-faire en rénovation et embellissement, pour un habitat qui vous ressemble et dans lequel vous vous sentirez parfaitement bien."
             :imgService= "TravauxIntImg"
             imgAlt= "photo travaux intérieurs"
             :services= travauxInt
