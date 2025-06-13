@@ -80,6 +80,14 @@ const props = defineProps({
         width: 560px;
         object-fit: cover;
         object-position: center;
+        @include responsive-tablette {
+            height: 400px;
+            width: 400px;
+        }
+        @include responsive-mobile {
+            height: 300px;
+            width: 300px;
+        }
     }
     &__content {
         @include flex(column, normal, normal, $gap-second-desktop);

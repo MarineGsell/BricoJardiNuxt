@@ -52,13 +52,15 @@ const goToNext = () => {
 </template>
 <style lang="scss" scoped>
 .carousel {
+    width: 100%;
     @include flex(row, center, center, 20px);
     &__container {
+        width: 100%;
         @include flex(row, center, center, 20px);
         &__current {
             border-radius: 10px;
             height: 500px;
-            width: 80vw;
+            width: 100%;
             position: relative;
             overflow: hidden;
             &__slide {

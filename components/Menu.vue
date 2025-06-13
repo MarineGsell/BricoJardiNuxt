@@ -27,6 +27,16 @@ const props = defineProps({
     width: auto;
     padding: 0;
     @include center;
+    @include responsive-tablette {
+        width: 100%;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background-color: $white;
+        @include flex (column, center, center, $gap-list);
+        padding: 16px;
+    }
     &__item {
         padding: 0 16px;
         @include flex (row, center, center, 0);

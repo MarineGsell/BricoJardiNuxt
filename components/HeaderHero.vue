@@ -1,7 +1,4 @@
 <script setup>
-import { ButtonsCta } from '#components';
-
-
 </script>
 <template>
     <section class="headerhero">
@@ -19,7 +16,6 @@ import { ButtonsCta } from '#components';
         <div class="headerhero__buttons">
             <ButtonsCta to="/contact">Devis Gratuit</ButtonsCta>
             <ButtonsHero to="/services">Services</ButtonsHero>
-            
         </div>
     </section>
 </template>
@@ -27,11 +23,11 @@ import { ButtonsCta } from '#components';
 
 .headerhero {
     margin-top: $margin-top;
-    padding: $padding-header-hero;
+    // padding: $padding-header-hero;
     background-image: $round-gradient;
     color: $white;
     min-height: 100vh;
-    @include flex (column, start, center, $gap-second-desktop);
+    @include flex (column, center, center, $gap-second-desktop);
     @include responsive-tablette {
         padding: $padding-header-hero-tablette;
         min-height: 100vh;
@@ -94,10 +90,10 @@ import { ButtonsCta } from '#components';
         text-align: center;
         @include font-p($white);    
         @include responsive-tablette {
-            width: 100%;
+            width: 70%;
         }
         @include responsive-mobile {
-            width: 100%;
+            width: 70%;
         }
     }
     &__buttons {

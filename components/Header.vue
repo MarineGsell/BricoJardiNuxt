@@ -49,14 +49,10 @@
             }
         }
         &__hamburger {
-            display: none;
-            @include responsive-tablette {
-                width: 30px;
-                @include center;
-            }
-            @include responsive-mobile {
-                width: 30px;
-                @include center;
+            display: block;
+            @include center;
+            @include responsive-desktop {
+                display: none;
             }
         }
         &__menu {

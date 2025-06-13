@@ -11,6 +11,10 @@ const entretienExt = servicesList.filter(service => service.categorie === "entre
 const travauxInt = servicesList.filter(service => service.categorie === "travauxInt");
 const perso = servicesList.filter(service => service.categorie === "autre");
 
+// Responsive
+// const { width } = useWindowSize();
+// const isTablette = computed(() => width.value <= 1024);
+
 </script>
 <template>
     <div class="services">
@@ -52,7 +56,16 @@ const perso = servicesList.filter(service => service.categorie === "autre");
 .services {
     margin-top: $margin-top;
     margin-bottom: $margin-bottom;
-    @include center;
+    @include flex(column, center, center, $gap-main-desktop);
+    @include responsive-tablette {
+        margin-top: $margin-top-tablette;
+        margin-bottom: $margin-bottom-tablette;
+        @include flex(column, center, center, $gap-main-tablette);
+    }
+    @include responsive-mobile {
+        margin-top: $margin-top-mobile;
+        margin-bottom: $margin-bottom-mobile;
+        @include flex(column, center, center, $gap-main-mobile);
+    }
 }
-
 </style>
