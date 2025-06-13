@@ -21,37 +21,45 @@ const perso = servicesList.filter(service => service.categorie === "autre");
             </section>
             <section class="services">
                 <h2 class="services__title">Des services qui s'adaptent</h2>
-                <p class="services__subtitle">Brico Jardi, votre spécialiste au Bassin d'Arcachon, vous accompagne dans tous vos projets d'aménagement. De la rénovation intérieure à la création d'espaces extérieurs uniques : Rénovation, terrasses bois, clôtures bois, entretien de jardin. Confiez-nous vos envies, nous les réalisons.</p>
-                <div class="services__cards">
-                    <ServicesCard 
-                    :services="amenagementExt"
-                    title="Aménagements extérieurs"
-                    ></ServicesCard>
-                    <ServicesCard 
-                    :services="entretienExt"
-                    title="Entretien de jardin"
-                    ></ServicesCard>
-                    <ServicesCard 
-                    :services="travauxInt"
-                    title="Travaux intérieurs"
-                    ></ServicesCard>
+                <p class="services__text">Brico Jardi, votre spécialiste au Bassin d'Arcachon, vous accompagne dans tous vos projets d'aménagement. De la rénovation intérieure à la création d'espaces extérieurs uniques : Rénovation, terrasses bois, clôtures bois, entretien de jardin. Confiez-nous vos envies, nous les réalisons.</p>
+                <div class="services__content">
+                    <div class="services__content__cards">
+                        <ServicesCard 
+                        :services="amenagementExt"
+                        title="Aménagements extérieurs"
+                        ></ServicesCard>
+                        <ServicesCard 
+                        :services="entretienExt"
+                        title="Entretien de jardin"
+                        ></ServicesCard>
+                        <ServicesCard 
+                        :services="travauxInt"
+                        title="Travaux intérieurs"
+                        ></ServicesCard>
+                    </div>
+                    <div class="services__content__buttons">
+                        <ButtonsMain to="/services">Voir tous les services</ButtonsMain>
+                        <ButtonsCta to="/contact">Devis gratuit</ButtonsCta>
+                    </div>
                 </div>
-                <ButtonsMain to="/services">Voir tous les services</ButtonsMain>
-                <BigCard
-                    v-if="perso.length"
-                    :title="perso[0].title"
-                    :text="perso[0].description"
-                    class="services__perso"
-                    ctaLink="/contact"
-                    ctaText="Parlez-nous de votre projet"
-                ></BigCard>
             </section>
+            <BigCard
+                v-if="perso.length"
+                :title="perso[0].title"
+                :text="perso[0].description"
+                class="services__perso"
+                ctaLink="/contact"
+                ctaText="Parlez-nous de votre projet"
+            ></BigCard>
             <section class="realisations">
                 <h2 class="realisations__title">Des réalisations sur mesures</h2>
-                <p class="realisations__subtitle">Découvrez nos projets terminés qui témoignent du savoir-faire et de l'engagement qualité de Brico Jardi. Chaque réalisation illustre notre capacité à transformer vos idées en réalité, qu'il s'agisse d'aménagements extérieurs, d'entretien de jardin ou de travaux intérieurs. Laissez-vous inspirer par ces exemples concrets de notre expertise au service de votre satisfaction.</p>
-                <Carousel class="realisations__carrousel"/>
-                <div class="realisations__buttons">
-                    <ButtonsMain to="/realisations">Voir toutes les réalisations</ButtonsMain>
+                <div class="realisations__content">
+                    <p class="realisations__content__text">Découvrez nos projets terminés qui témoignent du savoir-faire et de l'engagement qualité de Brico Jardi. Chaque réalisation illustre notre capacité à transformer vos idées en réalité, qu'il s'agisse d'aménagements extérieurs, d'entretien de jardin ou de travaux intérieurs. Laissez-vous inspirer par ces exemples concrets de notre expertise au service de votre satisfaction.</p>
+                    <Carousel class="realisations__content__carrousel"/>
+                    <div class="realisations__content__buttons">
+                        <ButtonsMain to="/realisations">Voir toutes les réalisations</ButtonsMain>
+                        <ButtonsCta to="/contact">Devis gratuit</ButtonsCta>
+                    </div>
                 </div>
             </section>
             <Contact 
@@ -82,80 +90,120 @@ const perso = servicesList.filter(service => service.categorie === "autre");
 }
 .about {
     @include padding-div;
-    @include flex(column, center, center, $gap-main-desktop);
+    @include flex(column, center, start, $gap-second-desktop);
+    @include hover-underline-title('.about__header__title');
     @include responsive-tablette {
         margin-top: $margin-top-tablette;
-        @include flex(column, center, center, $gap-main-tablette);
+        @include flex(column, center, start, $gap-second-tablette);
     }
     @include responsive-mobile {
         margin-top: $margin-top-mobile;
-        @include flex(column, center, center, $gap-main-mobile);
+        @include flex(column, center, start, $gap-second-mobile);
     }
     &__header {
-       @include flex(column, center, center, 0);
+        width: 100%;
+        @include flex(column, center, start, $gap-third-desktop);
+        @include responsive-tablette {
+            @include flex(column, center, start, $gap-third-tablette);
+        }
+        @include responsive-mobile {
+            @include flex(column, center, start, $gap-third-mobile);
+        }
         &__title {
+            width: 100%;
             @include font-h2($main-color);
         }
         &__subtitle {
-            @include font-h3($main-color);
-            text-align: center;
+            @include font-h3($text-color-main);
         }
     }
     &__text {
-        text-align: center;
-        @include font-p($text-color-main);
+        @include font-p($text-color-second);
     }
 }
 .services {
     @include padding-div;
-    @include flex(column, center, center, $gap-main-desktop);
+    @include flex(column, center, start, $gap-second-desktop);
+    @include hover-underline-title('.services__title');
     @include responsive-tablette {
-        @include flex(column, center, center, $gap-main-tablette);
+        @include flex(column, center, start, $gap-second-tablette);
     }
     @include responsive-mobile {
-        @include flex(column, center, center, $gap-main-mobile);
+        @include flex(column, center, start, $gap-second-mobile);
     }
     &__title {
+        width: 100%;
         @include font-h2($main-color);
     }
-    &__subtitle {
+    &__text {
         @include font-p($text-color-main);
     }
-    &__cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: $gap-second-desktop;
+    &__content {
+        margin: auto;
+        @include flex(column, center, center, $gap-second-desktop);
         @include responsive-tablette {
-            gap: $gap-second-tablette;
+            @include flex(column, center, center, $gap-second-tablette);
         }
         @include responsive-mobile {
-            grid-template-columns: 1fr;
-            gap: $gap-second-mobile;
+            @include flex(column, center, center, $gap-second-mobile);
+        }
+        &__cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: $gap-second-desktop;
+            @include responsive-tablette {
+                gap: $gap-second-tablette;
+            }
+            @include responsive-mobile {
+                grid-template-columns: 1fr;
+                gap: $gap-second-mobile;
+            }
+        }
+        &__buttons {
+            @include flex(row, center, center, $gap-second-desktop);
+            @include responsive-tablette {
+                @include flex(row, center, center, $gap-second-tablette);
+            }
+            @include responsive-mobile {
+                @include flex(column, center, center, $gap-second-mobile);
+            }
         }
     }
 }
 .realisations {
     @include padding-div;
-    @include flex(column, center, center, $gap-main-desktop);
+    @include flex(column, center, start, $gap-second-desktop);
+    @include hover-underline-title('.realisations__title');
     @include responsive-tablette {
-        @include flex(column, center, center, $gap-main-tablette);
+        @include flex(column, center, start, $gap-second-tablette);
     }
     @include responsive-mobile {
-        @include flex(column, center, center, $gap-main-mobile);
+        @include flex(column, center, start, $gap-second-mobile);
     }
     &__title {
+        width: 100%;
         @include font-h2($main-color);
     }
-    &__subtitle {
-        @include font-p($text-color-main);
-    }
-    &__buttons {
-        @include flex (row, center, center, $gap-second-desktop);
+    &__content {
+        margin: auto;
+        @include flex(column, center, center, $gap-second-desktop);
         @include responsive-tablette {
-            @include flex (row, center, center, $gap-second-tablette);
+            @include flex(column, center, center, $gap-second-tablette);
         }
         @include responsive-mobile {
-            @include flex (row, center, center, $gap-second-mobile);
+            @include flex(column, center, center, $gap-second-mobile);
+        }
+        &__text {
+            @include font-p($text-color-main);
+        }
+        &__buttons {
+            @include flex(row, center, center, $gap-second-desktop);
+            @include responsive-tablette {
+                @include flex(row, center, center, $gap-second-tablette);
+            }
+            @include responsive-mobile {
+                @include flex(column, center, center, $gap-second-mobile);
+            }
         }
     }
 }
