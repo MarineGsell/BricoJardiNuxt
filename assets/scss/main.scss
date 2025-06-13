@@ -180,6 +180,7 @@ $padding-nav: 16px 32px;
 $padding-header-hero: 64px 32px;   
 $padding-header-hero-tablette: 48px 24px;
 $padding-header-hero-mobile: 32px 16px;
+$padding-header-hero-title: 0 32px;
 $gap-title: 24px;
 
 // Nav
@@ -187,12 +188,14 @@ $shadow-nav: 0px 2px 4px rgba(56, 113,135 , 0.25);
 $nav-height: 64px;
 
 // Buttons
+$button-border-radius: 50px;
+
 @mixin button-main ($padding) {
     background-color: $main-color;
     color: $white;
     padding: $padding;
     border: none;
-    border-radius: 6px;
+    border-radius: $button-border-radius;
     font-family: "Source Sans 3", sans-serif;
     line-height: 1.6;
     font-size: 16px;
@@ -210,7 +213,7 @@ $nav-height: 64px;
     padding: $padding;
     border: 2px solid $main-color;
     background-color: transparent;
-    border-radius: 6px;
+    border-radius: $button-border-radius;
     font-family: "Source Sans 3", sans-serif;
     line-height: 1.6;
     font-size: 16px;
@@ -228,7 +231,7 @@ $nav-height: 64px;
     padding: $padding;
     border: none;
     background-color: $white;
-    border-radius: 6px;
+    border-radius: $button-border-radius;
     font-family: "Source Sans 3", sans-serif;
     line-height: 1.6;
     font-size: 16px;
@@ -245,7 +248,7 @@ $nav-height: 64px;
     background-color: $accent-color;
     padding: $padding;
     border: none;
-    border-radius: 6px;
+    border-radius: $button-border-radius;
     font-family: "Source Sans 3", sans-serif;
     line-height: 1.6;
     font-size: 16px;
@@ -263,7 +266,7 @@ $nav-height: 64px;
     color: $white;
     padding: $padding;
     border: none;
-    border-radius: 6px;
+    border-radius: $button-border-radius;
     font-family: "Source Sans 3", sans-serif;
     line-height: 1.6;
     font-size: 16px;

@@ -19,7 +19,7 @@ title: {
 </template>
 <style lang="scss" scoped>
 .card {
-    height: 200px;
+    height: 240px;
     width: 100%;
     background-position: center;
     background-size: cover;
@@ -46,13 +46,13 @@ title: {
             opacity: 0;
             transition: $transition;
             @include font-p($white);
+            @include flex(row, start, end, 0);
             @include responsive-tablette {
                 padding: $padding-card-tablette;
             }
             @include responsive-mobile {
                 padding: $padding-card-mobile;
             }
-            @include flex(row, start, end, 0);
             &:hover {
                 opacity: 1;
             }
