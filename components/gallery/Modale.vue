@@ -50,7 +50,7 @@ const works = computed(() => props.realisation.travaux)
     }
     &__window {
         background-color: $white;
-        width: 50%;
+        width: 50vw;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -58,6 +58,9 @@ const works = computed(() => props.realisation.travaux)
         border-radius: 5px;
         padding: 32px 64px;
         @include flex(column, start, start, $gap-list);
+        @include responsive-tablette {
+            width: 80vw;
+        }
         &__button {
             background-color: $second-color;
             color: $white;

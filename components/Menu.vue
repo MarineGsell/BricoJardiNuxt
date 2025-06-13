@@ -34,6 +34,7 @@ const props = defineProps({
         left: 0;
         right: 0;
         background-color: $white;
+        box-shadow: $shadow-nav;
         @include flex (column, center, center, $gap-list);
         padding: 16px;
     }

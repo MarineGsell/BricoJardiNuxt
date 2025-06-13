@@ -1,5 +1,6 @@
 <template>
     <div class="contact">
+        
         <Banner
             class="contact__banner"
             title="Zone d'intervention"

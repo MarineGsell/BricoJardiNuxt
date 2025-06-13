@@ -22,7 +22,13 @@ const props = defineProps ({
     }
     &__link {
         text-decoration: none;
-        color: $white;
+        color: $main-color;
+        transition: $transition;
+    }
+    &:hover {
+        .button__link {
+            color: $white;
+        }
     }
 }
 </style>

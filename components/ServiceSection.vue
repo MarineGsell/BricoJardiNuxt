@@ -44,7 +44,10 @@ const props = defineProps({
                         <div class="service-section__content__box__service__item__text">{{ service.description }}</div>
                     </div>
                 </div>
-                <ButtonsCta to="/contact">Demandez votre devis gratuit</ButtonsCta>
+                <div class="service-section__content__box__buttons">
+                    <ButtonsSecond to="/realisations">Voir nos réalisations</ButtonsSecond>
+                    <ButtonsCta to="/contact">Demandez votre devis gratuit</ButtonsCta>
+                </div>
             </div>
         </div>
     </div>
@@ -148,6 +151,15 @@ const props = defineProps({
                     &__line {
                         color: $second-color;
                     }
+                }
+            }
+            &__buttons {
+                @include flex(row, center, center, $gap-second-desktop);
+                @include responsive-tablette {
+                    @include flex(row, center, center, $gap-second-tablette);
+                }
+                @include responsive-mobile {
+                    @include flex(column, center, center, $gap-second-mobile);
                 }
             }
         }

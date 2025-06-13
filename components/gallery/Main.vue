@@ -70,6 +70,15 @@ const closeModale = () => {
     @include responsive-mobile {
         @include flex(column, center, center, $gap-main-mobile);
     }
+    &__filters {
+        @include flex(row, center, center, $gap-second-desktop);
+        @include responsive-tablette {
+            @include flex(row, center, center, $gap-second-tablette);
+        }
+        @include responsive-mobile {
+            @include flex(row, center, center, $gap-second-mobile);
+        }
+    }
     &__content {
         width: 80%;
         display: grid;

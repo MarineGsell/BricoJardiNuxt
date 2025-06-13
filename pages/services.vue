@@ -11,58 +11,65 @@ const entretienExt = servicesList.filter(service => service.categorie === "entre
 const travauxInt = servicesList.filter(service => service.categorie === "travauxInt");
 const perso = servicesList.filter(service => service.categorie === "autre");
 
-// Responsive
-// const { width } = useWindowSize();
-// const isTablette = computed(() => width.value <= 1024);
+// Hero content
+const title = "Transformez votre habitat";
+const text = "De la rénovation de votre intérieur à l'aménagement de vos espaces extérieurs, Brico Jardi vous accompagne dans tous vos projets sur le Bassin d'Arcachon. Travail soigné, délais respectés, écoute attentive.";
+
 
 </script>
 <template>
     <div class="services">
-        <ServiceSection 
-            sectionTitle= "Aménagez votre extérieur"
-            sectionText= "Transformez votre espace extérieur en un lieu de vie à votre image, où confort et esthétique se conjuguent harmonieusement pour créer votre havre de paix personnalisé."
-            :imgService= "AmenagementExtImg"
-            imgAlt= "photo aménagement extérieur"
-            :services= amenagementExt
+        <HeaderHero 
+            :title="title"
+            :text="text"
+            to="/realisations"
+            button="Voir nos réalisations"
+            class="services__header"
         />
-        <ServiceSection 
-            sectionTitle= "Entretenez votre jardin"
-            sectionText= "Confiez l'entretien régulier de votre espace vert à des professionnels passionnés qui préserveront la beauté de votre jardin saison après saison, vous libérant du temps pour en profiter pleinement."
-            :imgService= "EntretienExtImg"
-            imgAlt= "photo entretien extérieur"
-            :services= entretienExt
-        />
-        <ServiceSection 
-            sectionTitle= "Travaux intérieurs"
-            sectionText= "Donnez une nouvelle dimension à votre intérieur grâce à notre savoir-faire en rénovation et embellissement, pour un habitat qui vous ressemble et dans lequel vous vous sentirez parfaitement bien."
-            :imgService= "TravauxIntImg"
-            imgAlt= "photo travaux intérieurs"
-            :services= travauxInt
-        />
-        <BigCard
-            v-if="perso.length"
-            :title="perso[0].title"
-            :text="perso[0].description"
-            class="services__perso"
-            ctaLink="/contact"
-            ctaText="Parlez-nous de votre projet"
-        ></BigCard>
+        <div class="services__content">
+            <ServiceSection 
+                sectionTitle= "Aménagez votre extérieur"
+                sectionText= "Transformez votre espace extérieur en un lieu de vie à votre image, où confort et esthétique se conjuguent harmonieusement pour créer votre havre de paix personnalisé."
+                :imgService= "AmenagementExtImg"
+                imgAlt= "photo aménagement extérieur"
+                :services= amenagementExt
+            />
+            <ServiceSection 
+                sectionTitle= "Entretenez votre jardin"
+                sectionText= "Confiez l'entretien régulier de votre espace vert à des professionnels passionnés qui préserveront la beauté de votre jardin saison après saison, vous libérant du temps pour en profiter pleinement."
+                :imgService= "EntretienExtImg"
+                imgAlt= "photo entretien extérieur"
+                :services= entretienExt
+            />
+            <ServiceSection 
+                sectionTitle= "Travaux intérieurs"
+                sectionText= "Donnez une nouvelle dimension à votre intérieur grâce à notre savoir-faire en rénovation et embellissement, pour un habitat qui vous ressemble et dans lequel vous vous sentirez parfaitement bien."
+                :imgService= "TravauxIntImg"
+                imgAlt= "photo travaux intérieurs"
+                :services= travauxInt
+            />
+            <BigCard
+                v-if="perso.length"
+                :title="perso[0].title"
+                :text="perso[0].description"
+                class="services__perso"
+                ctaLink="/contact"
+                ctaText="Parlez-nous de votre projet"
+            ></BigCard>
+        </div>
     </div>
 </template>
 <style lang="scss">
 .services {
-    margin-top: $margin-top;
     margin-bottom: $margin-bottom;
-    @include flex(column, center, center, $gap-main-desktop);
-    @include responsive-tablette {
-        margin-top: $margin-top-tablette;
-        margin-bottom: $margin-bottom-tablette;
-        @include flex(column, center, center, $gap-main-tablette);
-    }
-    @include responsive-mobile {
-        margin-top: $margin-top-mobile;
-        margin-bottom: $margin-bottom-mobile;
-        @include flex(column, center, center, $gap-main-mobile);
+    &__content {
+        @include flex(column, center, center, $gap-main-desktop);
+        @include responsive-tablette {
+            @include flex(column, center, center, $gap-main-tablette);
+        }
+        @include responsive-mobile {
+            @include flex(column, center, center, $gap-main-mobile);
+        }
     }
 }
 </style>

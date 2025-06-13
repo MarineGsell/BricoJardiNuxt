@@ -9,7 +9,7 @@ const perso = servicesList.filter(service => service.categorie === "autre");
 </script>
 <template>
     <div class="home">
-        <HeaderHero />
+        <HeaderHeroIndex />
         <ImgSection photoSection="/photos/terrasse-3.webp"/>
         <div class="home__content">
             <section class="about">
@@ -38,7 +38,7 @@ const perso = servicesList.filter(service => service.categorie === "autre");
                         ></ServicesCard>
                     </div>
                     <div class="services__content__buttons">
-                        <ButtonsMain to="/services">Voir tous les services</ButtonsMain>
+                        <ButtonsSecond to="/services">Voir tous les services</ButtonsSecond>
                         <ButtonsCta to="/contact">Devis gratuit</ButtonsCta>
                     </div>
                 </div>
@@ -57,7 +57,7 @@ const perso = servicesList.filter(service => service.categorie === "autre");
                     <p class="realisations__content__text">Découvrez nos projets terminés qui témoignent du savoir-faire et de l'engagement qualité de Brico Jardi. Chaque réalisation illustre notre capacité à transformer vos idées en réalité, qu'il s'agisse d'aménagements extérieurs, d'entretien de jardin ou de travaux intérieurs. Laissez-vous inspirer par ces exemples concrets de notre expertise au service de votre satisfaction.</p>
                     <Carousel class="realisations__content__carrousel"/>
                     <div class="realisations__content__buttons">
-                        <ButtonsMain to="/realisations">Voir toutes les réalisations</ButtonsMain>
+                        <ButtonsSecond to="/realisations">Voir toutes les réalisations</ButtonsSecond>
                         <ButtonsCta to="/contact">Devis gratuit</ButtonsCta>
                     </div>
                 </div>

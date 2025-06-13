@@ -56,7 +56,7 @@
             }
         }
         &__menu {
-            @include responsive-mobile {
+            @include responsive-tablette {
                 display: none
             }
         }
