@@ -9,6 +9,9 @@ const isMenuOpen = ref(false)
 const toggleMenu = () => {
     isMenuOpen.value = !isMenuOpen.value
 }
+const closeMenu = () => {
+    isMenuOpen.value = false
+}
 </script>
 
 <template>
@@ -24,6 +27,7 @@ const toggleMenu = () => {
         <Menu 
             v-if="isMenuOpen"
             flexDirection="column"
+            @close-menu="closeMenu"
         />
         </Transition>
     </div>
