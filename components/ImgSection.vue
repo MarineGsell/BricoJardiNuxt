@@ -8,7 +8,6 @@ const props = defineProps({
 </script>
 <template>
     <section class="img" :style="{ backgroundImage:`url(${photoSection})` }">
-        <!-- <div class="img__overlay"></div> -->
     </section>
 </template>
 <style lang="scss">
@@ -18,6 +17,16 @@ const props = defineProps({
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    @include responsive-tablette {
+        height: 40vh;
+        background-position: center 30%;
+        background-attachment: scroll;
+    };
+    @include responsive-mobile {
+        height: 20vh;
+        background-position: center 20%;
+        background-attachment: scroll;
+    }
     &__overlay {
         width: 100%;
         height: 100%;
