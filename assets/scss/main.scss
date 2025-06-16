@@ -80,7 +80,7 @@ $logo-height: 64px;
     font-weight: 400;
     line-height: 1.6;
     color: $color;
-    text-align: justify;
+    // text-align: justify;
     @include responsive-tablette {
         font-size: 16px;
     }
