@@ -1,6 +1,6 @@
 <script setup>
 const title = "Votre projet, notre savoir-faire";
-const text = "Bienvenue dans notre galerie de projets réalisés. Chaque photo raconte l'histoire d'une transformation réussie et d'un client satisfait. Des terrasses en bois aux rénovations intérieures, en passant par l'entretien d'espaces verts, ces réalisations témoignent de notre savoir-faire, de notre attention aux détails et de notre engagement à concrétiser vos projets avec professionnalisme. Parcourez ces exemples pour vous inspirer et imaginer ce que nous pourrions créer ensemble pour votre habitat.";
+const text = "Découvrez nos réalisations dans le Bassin d'Arcachon : terrasses en bois, rénovations intérieures et aménagements extérieurs. Chaque projet témoigne de notre savoir-faire et de notre engagement qualité. Laissez-vous inspirer par ces transformations réussies pour imaginer votre futur projet avec Brico Jardi.";
 
 </script>
 <template>
@@ -28,6 +28,9 @@ const text = "Bienvenue dans notre galerie de projets réalisés. Chaque photo r
         margin-bottom: $margin-bottom;
         &__buttons {
             @include flex(row, center, center, $gap-row);
+            @include responsive-mobile {
+                @include flex(column, center, center, $gap-third-mobile);
+            }
         }
     }
 }

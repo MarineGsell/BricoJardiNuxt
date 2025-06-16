@@ -108,9 +108,7 @@
                     @include flex(column, center, start, $gap-second-tablette);
                 }   
                 @include responsive-mobile {
-                    display: grid;
-                    grid-template-columns: repeat(2, 1fr);
-                    gap: $gap-second-mobile;
+                     @include flex(column, center, start, $gap-second-mobile);
                 }
                 &__item {
                     @include flex(row, start, center, $gap-row);

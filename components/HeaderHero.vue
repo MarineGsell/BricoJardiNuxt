@@ -37,12 +37,10 @@ const props = defineProps({
     @include flex (column, center, center, $gap-second-desktop);
     @include responsive-tablette {
         padding: $padding-header-hero-tablette;
-        min-height: 100vh;
+        min-height: fit-content;
         @include flex (column, center, center, $gap-second-tablette);
     }
     @include responsive-mobile {
-        padding: $padding-header-hero-mobile;
-        min-height: 100vh;
         @include flex (column, center, center, $gap-second-mobile);
     }
     &__title {
@@ -54,7 +52,6 @@ const props = defineProps({
     }
     &__text {
         width: 70%;
-        text-align: center;
         @include font-p($white);    
     }
     &__buttons {

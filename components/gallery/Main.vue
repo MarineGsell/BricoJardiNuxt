@@ -76,7 +76,7 @@ const closeModale = () => {
             @include flex(row, center, center, $gap-second-tablette);
         }
         @include responsive-mobile {
-            @include flex(row, center, center, $gap-second-mobile);
+            @include flex(column, center, center, $gap-second-mobile);
         }
     }
     &__content {

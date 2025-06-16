@@ -61,6 +61,9 @@ const works = computed(() => props.realisation.travaux)
         @include responsive-tablette {
             width: 80vw;
         }
+        @include responsive-mobile {
+            padding: 8px 16px;
+        }
         &__button {
             background-color: $second-color;
             color: $white;
@@ -79,6 +82,9 @@ const works = computed(() => props.realisation.travaux)
             background-size: cover;
             border-radius: 5px;
             margin: auto;
+            @include responsive-mobile {
+                height: 150px;
+            }
         }
         &__title {
             width: 100%;

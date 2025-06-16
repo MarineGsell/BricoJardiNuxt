@@ -133,9 +133,15 @@ const props = defineProps({
                         &__icon {
                             height: $icons-height;
                             width: auto;
+                            @include responsive-tablette {
+                                color: $main-color;
+                            }
                         }
                         &__text {
                             @include font-h3($text-color-main); 
+                            @include responsive-tablette {
+                                @include font-h3($main-color); 
+                            }
                         }
                     }
                     &__text {

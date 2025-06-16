@@ -80,15 +80,12 @@ $logo-height: 64px;
     font-weight: 400;
     line-height: 1.6;
     color: $color;
-    // margin-bottom: 16px;
     text-align: justify;
     @include responsive-tablette {
         font-size: 16px;
-        // margin-bottom: 14px;
     }
     @include responsive-mobile {
         font-size: 16px;
-        // margin-bottom: 12px;
     }
 }
 @mixin font-link {
@@ -140,9 +137,6 @@ $margin-bottom-mobile: 32px;
 $margin-side-desktop: 48px;
 $margin-side-mobile: 24px;
 
-// $gap-main-desktop: 80px;
-// $gap-main-tablette: 64px;
-// $gap-main-mobile: 48px;
 $gap-main-desktop: 120px;
 $gap-main-tablette: 96px;
 $gap-main-mobile: 64px;

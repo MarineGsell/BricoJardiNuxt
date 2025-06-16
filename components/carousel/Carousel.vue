@@ -63,6 +63,12 @@ const goToNext = () => {
             width: 100%;
             position: relative;
             overflow: hidden;
+            @include responsive-tablette {
+                height: 300px;
+            }
+            @include responsive-mobile {
+                height: 200px;
+            }
             &__slide {
                 position: absolute;
                 top: 0;

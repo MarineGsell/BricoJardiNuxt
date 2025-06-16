@@ -5,11 +5,11 @@
         <div class="headerhero__title">
             <h1 class="headerhero__title__text">Avec Brico Jardi profitez</h1>
             <div class="headerhero__title__anim">
-                <h2 class="headerhero__title__anim__line">d'un jardin soigné</h2> 
-                <h2 class="headerhero__title__anim__line">de terrasses durables</h2>
-                <h2 class="headerhero__title__anim__line">de solutions uniques</h2> 
-                <h2 class="headerhero__title__anim__line">d'espaces réinventés</h2> 
-                <h2 class="headerhero__title__anim__line">de murs impeccables</h2> 
+                <h2 class="headerhero__title__anim__line">Jardin soigné</h2> 
+                <h2 class="headerhero__title__anim__line">Terrasses durables</h2>
+                <h2 class="headerhero__title__anim__line">Solutions uniques</h2> 
+                <h2 class="headerhero__title__anim__line">Espaces réinventés</h2> 
+                <h2 class="headerhero__title__anim__line">Murs impeccables</h2> 
             </div>
         </div>
         <p class="headerhero__subtitle">Brico Jardi, votre partenaire privilégié sur tout le Bassin d'Arcachon, vous propose des solutions de rénovation sur-mesure pour vos espaces intérieurs et extérieurs et s'adapte à chacune de vos demandes pour transformer vos projets en réalité.</p>
