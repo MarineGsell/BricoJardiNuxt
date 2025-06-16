@@ -1,6 +1,6 @@
 <script setup>
 // Data
-import carouselItems from '@/data/carouselItems'
+import realisations from '~/data/realisations'
 
 const currentItem = ref(0)
 const direction = ref('right')
@@ -8,7 +8,7 @@ const direction = ref('right')
 const goToPrev = () => {
     direction.value = 'left'
     if(currentItem.value === 0){
-        currentItem.value = carouselItems.length -1
+        currentItem.value = realisations.length -1
     } else {
         currentItem.value--
     }
@@ -16,7 +16,7 @@ const goToPrev = () => {
 
 const goToNext = () => {
     direction.value = 'right'
-    if(currentItem.value === carouselItems.length -1) {
+    if(currentItem.value === realisations.length -1) {
         currentItem.value = 0
     } else {
         currentItem.value++
@@ -39,7 +39,7 @@ const goToNext = () => {
                     <CarouselSlide 
                     :key="currentItem"
                     class="carousel__container__current__slide"
-                    :bgImg="carouselItems[currentItem].image"
+                    :bgImg="realisations[currentItem].image"
                     />
                 </Transition>
             </div>

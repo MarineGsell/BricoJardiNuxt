@@ -22,7 +22,6 @@
 <style lang="scss" scoped>
 .headerhero {
     margin-top: $margin-top;
-    // padding: $padding-header-hero;
     background-image: $round-gradient;
     color: $white;
     min-height: 100vh;

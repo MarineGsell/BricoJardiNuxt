@@ -14,6 +14,7 @@ const props = defineProps({
 const title = computed(() => props.realisation.title) 
 const img = computed(() => props.realisation.image) 
 const works = computed(() => props.realisation.travaux) 
+const place = computed(() => props.realisation.place) 
 
 </script>
 <template>
@@ -21,7 +22,11 @@ const works = computed(() => props.realisation.travaux)
         <div class="modale__overlay" @click="handleClose"></div>
         <div class="modale__window">
             <div class="modale__window__button" @click="handleClose">X</div>
-            <h4 class="modale__window__title">{{ title }}</h4>
+            <h3 class="modale__window__title">{{ title }}</h3>
+            <div class="modale__window__place">
+                <SvgIconPin class="modale__window__place__icon"/>
+                <p class="modale__window__place__text">{{ place }}</p>
+            </div>
             <div class="modale__window__img" :style="{ backgroundImage:`url(${img})`}"></div>
             <ul class="modale__window__list">
                 <li 
@@ -90,6 +95,16 @@ const works = computed(() => props.realisation.travaux)
             width: 100%;
             text-align: center;
             @include font-h3($main-color);
+        }
+        &__place {
+            @include flex(row, center, center, $gap-row);
+            &__icon {
+                color: $text-color-main;
+                height: 24px;
+            }
+            &__text {
+                @include font-p($text-color-main);
+            }
         }
         &__list {
             list-style: none;
