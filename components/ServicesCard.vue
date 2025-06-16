@@ -40,6 +40,7 @@ const props = defineProps({
     @include card ($padding-card);
     @include flex(column, normal, normal, $gap-second-desktop);
     @include responsive-tablette {
+        height: auto;
         @include card($padding-card-tablette);
         @include flex(column, normal, normal, $gap-second-tablette);
     }
