@@ -16,7 +16,7 @@ const text = "Découvrez nos réalisations dans le Bassin d'Arcachon : terrasses
             <GalleryMain />
             <div class="realisations__content__buttons">
                 <ButtonsSecond to="/realisations">Voir nos réalisations</ButtonsSecond>
-                <ButtonsCta to="/contact">Demandez votre devis gratuit</ButtonsCta>
+                <ButtonsCta to="/contact#contactForm">Demandez votre devis gratuit</ButtonsCta>
             </div>
         </div>
     </div>

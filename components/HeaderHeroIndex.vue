@@ -14,7 +14,7 @@
         </div>
         <p class="headerhero__subtitle">Brico Jardi, votre partenaire privilégié sur tout le Bassin d'Arcachon, vous propose des solutions de rénovation sur-mesure pour vos espaces intérieurs et extérieurs et s'adapte à chacune de vos demandes pour transformer vos projets en réalité.</p>
         <div class="headerhero__buttons">
-            <ButtonsCta to="/contact">Devis Gratuit</ButtonsCta>
+            <ButtonsCta to="/contact#contactForm">Devis Gratuit</ButtonsCta>
             <ButtonsHero to="/services">Services</ButtonsHero>
         </div>
     </section>

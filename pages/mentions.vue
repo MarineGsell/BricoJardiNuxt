@@ -86,16 +86,17 @@
     }
     &__header {
         width: 100%;
-        height: 200px;
+        height: 400px;
         background-image: $round-gradient;
         color: $white;
         @include flex (column, center, center, $gap-second-desktop);
         @include responsive-tablette {
             padding: $padding-header-hero-tablette;
-            min-height: fit-content;
+            height: 320px;
             @include flex (column, center, center, $gap-second-tablette);
         }
         @include responsive-mobile {
+            height: 200px;
             @include flex (column, center, center, $gap-second-mobile);
         }
         &__title {

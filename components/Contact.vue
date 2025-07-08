@@ -1,7 +1,7 @@
 <script setup>
 </script>
 <template>
-    <section class="contact">
+    <section class="contact" id="contactForm">
         <div class="contact__header">
             <div class="contact__header__head">
                 <h2 class="contact__header__head__title">Contactez Brico Jardi</h2>
@@ -14,7 +14,7 @@
                 <ul class="contact__content__info__items">
                     <li class="contact__content__info__items__item">
                         <SvgIconPhone class="contact__content__info__items__item__icon"/>
-                        <p class="contact__content__info__items__item__text">06.76.66.04.66</p>
+                        <a href="tel:+33676660466" class="contact__content__info__items__item__mailto">06.76.66.04.66</a>
                     </li>
                     <li class="contact__content__info__items__item">
                         <SvgIconEmail class="contact__content__info__items__item__icon"/>
@@ -42,6 +42,7 @@
 </template>
 <style lang="scss" scoped>
 .contact {
+    padding-top: 72px;
     @include padding-div;
     @include flex(column, center, center, $gap-second-desktop);
     @include hover-underline-title('.contact__header__head__title');

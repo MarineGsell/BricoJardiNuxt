@@ -46,7 +46,7 @@ const props = defineProps({
                 </div>
                 <div class="service-section__content__box__buttons">
                     <ButtonsSecond to="/realisations">Voir nos réalisations</ButtonsSecond>
-                    <ButtonsCta to="/contact">Demandez votre devis gratuit</ButtonsCta>
+                    <ButtonsCta to="/contact#contactForm">Demandez votre devis gratuit</ButtonsCta>
                 </div>
             </div>
         </div>
