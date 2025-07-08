@@ -4,7 +4,12 @@
 <template>
     <div class="footer">
         <SvgLogoMain class="footer__logo"/>
-        <p class="footer__text">@copyright {{ new Date().getFullYear() }} - BricoJardi</p>
+        <p class="footer__text">
+            @copyright {{ new Date().getFullYear() }} BricoJardi - 
+            <NuxtLink class="footer__text__link" target="_blank" to="/mentions">Mentions légales</NuxtLink>
+            - Site réalisé par
+            <a href="https://marine.chopingsell.com/" class="footer__text__link" target="_blank">Marine DevWeb</a>
+        </p>
     </div>
 </template>
 
@@ -26,6 +31,14 @@
     }
     &__text {
         @include font-p($white);
+        &__link {
+            cursor: pointer;
+            text-decoration: none;
+            @include font-p($white);
+            &:hover {
+                @include font-p($second-color);
+            }
+        }
     }
 }
 </style>

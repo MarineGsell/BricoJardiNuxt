@@ -5,7 +5,8 @@ const contactForm = reactive({
     lastname: '',
     email: '',
     phone: '',
-    text: ''
+    text: '',
+    checkbox: false
 })
 
 // 🚨 Variables pour stocker les erreurs
@@ -14,7 +15,8 @@ const errors = reactive({
     lastname: '',
     email: '',
     phone: '',
-    text: ''
+    text: '',
+    checkbox: ''
 })
 
 // 🔍 Fonctions de validation pour chaque champ
@@ -70,6 +72,14 @@ const validateText = () => {
     errors.text = ''
     return true
 }
+const validateCheckbox = () => {
+    if(!contactForm.checkbox) {
+        errors.checkbox = 'Vous devez accepter les conditions pour continuer.'
+        return false
+    }
+    errors.checkbox = ''
+    return true
+}
 
 // ✅ Fonction pour valider tout le formulaire
 const validateForm = () => {
@@ -77,8 +87,9 @@ const validateForm = () => {
     const isLastnameValid = validateLastname()
     const isEmailValid = validateEmail()
     const isTextValid = validateText()
+    const isCheckboxValid = validateCheckbox()
 
-    return isFirstnameValid && isLastnameValid && isEmailValid && isTextValid
+    return isFirstnameValid && isLastnameValid && isEmailValid && isTextValid && isCheckboxValid
 }
 
 // 📤 Fonction pour soumettre le formulaire
@@ -101,6 +112,7 @@ async function submitForm() {
         contactForm.email = ''
         contactForm.phone = ''
         contactForm.text = ''
+        contactForm.checkbox = false
     })
     .catch((e) => alert(e))
 }
@@ -177,6 +189,19 @@ async function submitForm() {
                 <p class="form__row__field__input__error">{{ errors.text }}</p>
             </div>
         </div>
+        <div class="form__checkbox">
+            <div class="form__checkbox__field">
+                <input 
+                    type="checkbox" 
+                    id="rgpd"
+                    required
+                    v-model="contactForm.checkbox"
+                >
+                <label for="rgpd" class="form__checkbox__label">
+                    J'accepte que mes données soient utilisées pour me contacter.
+                </label>
+            </div>
+        </div>
         <ButtonsMain 
             class="form__button"
             type="submit"
@@ -190,7 +215,7 @@ async function submitForm() {
     @include font-p($text-color-main);
     &__row {
         width: 100%;
-        @include flex(row, start, center, $gap-form);
+        @include flex(row, center, start, $gap-form);
         &__field {
             width: 100%;
             @include flex(column, center, start, $gap-label);
@@ -201,6 +226,13 @@ async function submitForm() {
                 }
             }
         }        
+    }
+    &__checkbox {
+        width: 100%;
+        @include flex(column, center, center, $gap-label);
+        &__field {
+            @include flex(row, center, center, $gap-label);
+        }
     }
     &__button {
         margin-top: $gap-second-desktop;
