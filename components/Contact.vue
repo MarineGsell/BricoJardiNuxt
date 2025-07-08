@@ -18,7 +18,7 @@
                     </li>
                     <li class="contact__content__info__items__item">
                         <SvgIconEmail class="contact__content__info__items__item__icon"/>
-                        <p class="contact__content__info__items__item__text">dgsell@hotmail.fr</p>
+                        <a class="contact__content__info__items__item__mailto" href="mailto:dgsell@hotmail.fr">dgsell@hotmail.fr</a>
                     </li>
                 </ul>
                 <ul class="contact__content__info__items">
@@ -117,6 +117,14 @@
                         height: $icons-height;
                         width: auto;
                     }
+                    &__mailto {
+                        cursor: pointer;
+                        text-decoration: none;
+                        @include font-p($text-color-main);
+                        &:hover {
+                            @include font-p($main-color);
+                        }
+                    }
                     &__text {
                         @include font-p($text-color-main);
                     }
@@ -131,6 +139,9 @@
                         }
                         &__text {
                             @include font-p($text-color-main);
+                            &:hover {
+                                @include font-p($main-color);
+                            }
                         }
                     }
                 }
