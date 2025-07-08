@@ -36,7 +36,7 @@
                     </li>
                 </ul>
             </div>
-            <ContactForm class="contact__content__form" :colorLabel="colorTitle"/>
+            <ContactForm class="contact__content__form"/>
         </div>
     </section>
 </template>

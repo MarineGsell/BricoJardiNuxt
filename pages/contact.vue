@@ -41,9 +41,6 @@ const text = "Devis gratuit, conseil personnalisé ou simple question : nous som
         </div>
         <Contact 
             class="contact__form"
-            colorTitle="#387187"
-            colorText="#000000"
-            bgColor="#FFFFFF"
         />
 
     </div>

@@ -62,11 +62,7 @@ const perso = servicesList.filter(service => service.categorie === "autre");
                     </div>
                 </div>
             </section>
-            <Contact 
-                colorTitle="#387187"
-                colorText="##2E2E2E"
-                bgColor="#FFFFFF"
-            />
+            <Contact/>
         </div>
     </div>
 </template>
