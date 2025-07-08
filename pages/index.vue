@@ -39,7 +39,7 @@ const perso = servicesList.filter(service => service.categorie === "autre");
                     </div>
                     <div class="services__content__buttons">
                         <ButtonsSecond to="/services">Voir tous les services</ButtonsSecond>
-                        <ButtonsCta to="/contact">Devis gratuit</ButtonsCta>
+                        <ButtonsCta to="/contact#contactForm">Devis gratuit</ButtonsCta>
                     </div>
                 </div>
             </section>
@@ -48,7 +48,7 @@ const perso = servicesList.filter(service => service.categorie === "autre");
                 :title="perso[0].title"
                 :text="perso[0].description"
                 class="services__perso"
-                ctaLink="/contact"
+                ctaLink="/contact#contactForm"
                 ctaText="Parlez-nous de votre projet"
             ></BigCard>
             <section class="realisations">
@@ -58,15 +58,11 @@ const perso = servicesList.filter(service => service.categorie === "autre");
                     <Carousel class="realisations__content__carrousel"/>
                     <div class="realisations__content__buttons">
                         <ButtonsSecond to="/realisations">Voir toutes les réalisations</ButtonsSecond>
-                        <ButtonsCta to="/contact">Devis gratuit</ButtonsCta>
+                        <ButtonsCta to="/contact#contactForm">Devis gratuit</ButtonsCta>
                     </div>
                 </div>
             </section>
-            <Contact 
-                colorTitle="#387187"
-                colorText="##2E2E2E"
-                bgColor="#FFFFFF"
-            />
+            <Contact/>
         </div>
     </div>
 </template>

@@ -53,7 +53,7 @@ const text = "De la rénovation de votre intérieur à l'aménagement de vos esp
                 :title="perso[0].title"
                 :text="perso[0].description"
                 class="services__perso"
-                ctaLink="/contact"
+                ctaLink="/contact#contactForm"
                 ctaText="Parlez-nous de votre projet"
             ></BigCard>
         </div>

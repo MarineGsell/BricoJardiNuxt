@@ -23,7 +23,7 @@ const props = defineProps({
         <h1 class="headerhero__title">{{ title }}</h1>
         <p class="headerhero__text">{{ text }}</p>
         <div class="headerhero__buttons">
-            <ButtonsCta to="/contact">Devis Gratuit</ButtonsCta>
+            <ButtonsCta to="/contact#contactForm">Devis Gratuit</ButtonsCta>
             <ButtonsHero :to="to">{{ button }}</ButtonsHero>
         </div>
     </section>
