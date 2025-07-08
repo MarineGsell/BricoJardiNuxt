@@ -7,15 +7,13 @@
             <div class="mentions__content__infos">
                 <h2 class="mentions__content__infos__title">Informations légales</h2>
                 <p class="mentions__content__infos__text">
-                    Le présent site est édité par [NOM DE L'ENTREPRISE], 
-                    [Auto-entrepreneur / SARL / SAS / etc.] 
-                    dont le siège social est situé [ADRESSE COMPLÈTE]. 
-                    L'entreprise est immatriculée sous le numéro SIRET [NUMÉRO SIRET] 
-                    et le numéro SIREN [NUMÉRO SIREN]. 
-                    Le capital social s'élève à [MONTANT] euros. 
-                    Vous pouvez nous contacter par téléphone au [NUMÉRO DE TÉLÉPHONE] 
-                    ou par email à l'adresse dgsell@hotmail.fr.
-                    Le directeur de publication du site est [NOM DU DIRIGEANT].
+                    Le présent site est édité par GSELL Didier, 
+                    auto-entrepreneur dont l'adresse d'activité est située 
+                    2 Avenue des hères 33510 Andernos. L'entreprise est immatriculée sous 
+                    le numéro SIRET 49881963000027. Vous pouvez nous contacter 
+                    par téléphone au 06.76.66.04.66 ou par email à 
+                    l'adresse dgsell@hotmail.fr.
+                    Le directeur de publication du site est GSELL Didier.                
                 </p>
             </div>
             <div class="mentions__content__infos">
