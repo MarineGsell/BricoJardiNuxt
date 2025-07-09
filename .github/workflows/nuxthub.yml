@@ -30,4 +30,4 @@ jobs:
       - name: Build & Deploy to NuxtHub
         uses: nuxt-hub/action@v2
         with:
-          project-key: brico-jardi-nux-xhs3
+          project-key: brico-jardi-nux-4wwb
