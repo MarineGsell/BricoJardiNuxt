@@ -21,7 +21,12 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['@nuxthub/core', 'nuxt-auth-utils', 'nuxt-nodemailer'],
+  modules: [
+    '@nuxthub/core',
+    'nuxt-auth-utils',
+    'nuxt-nodemailer',
+    '@nuxt/image',
+  ],
   hub: {
     database: true
   },

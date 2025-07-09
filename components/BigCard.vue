@@ -32,13 +32,11 @@ const props = defineProps({
     width: 80%;
     margin: auto;
     @include flex(column, center, center, $gap-second-desktop);
-    @include card($padding-card);
+    @include card;
     @include responsive-tablette {
-        @include card($padding-card-tablette);
         @include flex(column, center, center, $gap-second-tablette);
     }
     @include responsive-mobile {
-        @include card($padding-card-mobile);
         @include flex(column, center, center, $gap-second-mobile);
     }
     &:hover {

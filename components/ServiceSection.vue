@@ -107,14 +107,12 @@ const props = defineProps({
                 }
                 &__item {
                     transition: $transition;
-                    @include card ($padding-card);
+                    @include card;
                     @include flex(column, center, start, $gap-second-desktop);
                     @include responsive-tablette {
-                        @include card ($padding-card-tablette);
                         @include flex(column, center, start, $gap-second-tablette);
                     }
                     @include responsive-mobile {
-                        @include card ($padding-card-mobile);
                         @include flex(column, center, start, $gap-second-mobile);
                     }
                     &:hover {
