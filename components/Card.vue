@@ -30,14 +30,12 @@ const props = defineProps({
     width: 100%;
     height: 74px;
     overflow: hidden;
-    @include card ($padding-card);
+    @include card;
     @include flex(column, normal, normal, $second-gap-desktop);
     @include responsive-tablette {
-        @include card($padding-card-tablette);
         @include flex(column, normal, normal, $second-gap-tablette);
     }
     @include responsive-mobile {
-        @include card($padding-card-mobile);
         @include flex(column, normal, normal, $second-gap-mobile);
     }
     &:hover {

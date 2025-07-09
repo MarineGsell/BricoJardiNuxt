@@ -143,7 +143,6 @@
                 padding-left: 24px;
                 &__item {
                     @include font-p($text-color-main);
-                    // margin-bottom: 10px;
                 }
             }
         }

@@ -88,6 +88,20 @@ $logo-height: 64px;
         font-size: 16px;
     }
 }
+@mixin font-p-little ($color) {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: $color;
+    // text-align: justify;
+    @include responsive-tablette {
+        font-size: 14px;
+    }
+    @include responsive-mobile {
+        font-size: 14px;
+    }
+}
 @mixin font-link {
     font-family: "ivysoft-variable", sans-serif;
     font-size: 16px;
@@ -125,6 +139,21 @@ $logo-height: 64px;
     font-size: $size;
     font-weight: $weight;
 }
+@mixin font-p-message($color){
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: $color;
+    // text-align: justify;
+    @include responsive-tablette {
+        font-size: 10px;
+    }
+    @include responsive-mobile {
+        font-size: 10px;
+    }
+}
+
 
 // Espacement et Layout
 $max-width: 1200px;
@@ -166,6 +195,8 @@ $padding-card-mobile: 16px;
 $padding-button: 16px 32px;
 $padding-button-tablette: 12px 24px;
 $padding-button-mobile: 8px 16px;
+$padding-button-little: 4px 8px;
+
 
 $padding-row: 16px;
 
@@ -278,16 +309,22 @@ $button-border-radius: 50px;
 }
 
 // Card
-@mixin card ($padding){
+@mixin card {
     border: 1px solid #E0E0E0;
     background: #FFFFFF;
     border-radius: 8px;
-    padding: $padding;
+    padding: $padding-card;
     box-shadow: 
         0 20px 25px -5px rgba(0, 0, 0, 0.1),
         0 10px 10px -5px rgba(0, 0, 0, 0.04);
     transition: $transition;
     cursor: pointer;
+    @include responsive-tablette {
+        padding: $padding-card-tablette;
+    }
+    @include responsive-mobile {
+        padding: $padding-card-mobile;
+    }
 }
 $padding-card: 24px;
 $padding-card-tablette: 20px;
@@ -457,6 +494,58 @@ $transition-carousel: all 0.5s ease-in-out;
         margin-top: 0;
     }
 }
+@keyframes title-anim-dashboard {
+    0% {
+        margin-top: 0;
+    }
+    25% {
+        margin-top: -88px;
+    }
+    50% {
+        margin-top: -176px;
+    }
+    75% {
+        margin-top: -88px;
+    }
+    100% {
+        margin-top: 0px;
+    }
+}
+@keyframes title-anim-dashboard-tablette {
+    0% {
+        margin-top: 0;
+    }
+    25% {
+        margin-top: -64px;
+    }
+    50% {
+        margin-top: -128px;
+    }
+    75% {
+        margin-top: -64px;
+    }
+    100% {
+        margin-top: 0px;
+    }
+}
+@keyframes title-anim-dashboard-mobile {
+    0% {
+        margin-top: 0;
+    }
+    25% {
+        margin-top: -48px;
+    }
+    50% {
+        margin-top: -96px;
+    }
+    75% {
+        margin-top: -48px;
+    }
+    100% {
+        margin-top: 0px;
+    }
+}
+
 
 // Responsive
 $breakpoint-mobile: 768px;
