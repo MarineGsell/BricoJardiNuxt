@@ -24,20 +24,9 @@ export default defineNuxtConfig({
   modules: [
     '@nuxthub/core',
     'nuxt-auth-utils',
-    'nuxt-nodemailer',
     '@nuxt/image',
   ],
   hub: {
     database: true
-  },
-  nodemailer: {
-    from: process.env.NUXT_NODEMAILER_FROM,
-    host: process.env.NUXT_NODEMAILER_HOST,
-    port: process.env.NUXT_NODEMAILER_PORT,
-    secure: process.env.NUXT_NODEMAILER_SECURE,
-    auth: {
-      user: process.env.NUXT_NODEMAILER_AUTH_USER,
-      pass: process.env.NUXT_NODEMAILER_AUTH_PASS,
-    },
   },
 })
