@@ -1,6 +1,10 @@
 <script setup>
+const { user, clear: clearSession } = useUserSession()
+async function logout() {
+  await clearSession()
+  await navigateTo('/')
+}
 </script>
-
 <template>
     <nav class="nav">
         <div class="nav__bar">
@@ -15,7 +19,7 @@
                 class="nav__bar__menu"
                 flexDirection="row"
             />
-            <ButtonsLittle>Déconnexion</ButtonsLittle>
+            <ButtonsLittle @click="logout">Déconnexion</ButtonsLittle>
         </div>
     </nav>
 </template>
