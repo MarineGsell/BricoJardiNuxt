@@ -1,26 +1,29 @@
 <script setup>
-import realisations from '@/data/realisations';
+const { data: worksData } = await useFetch('/api/works')
+const works = computed(() => {
+    return worksData.value
+})
 
 // Filter Bar
 const categories = ['Tous', 'Travaux extérieurs', 'Travaux intérieurs'] 
 const activeCategory = ref('Tous')
-const filteredRealisations = ref([...realisations])
+const filteredWorks = computed(() => {
+    if(activeCategory.value === 'Tous'){
+        return works.value
+    } else {
+        return works.value?.filter(work => work.category === activeCategory.value)
+    }
+})
 
 const filteredByCategory = (category) => {
     activeCategory.value = category
-    if(category === 'Tous'){
-        filteredRealisations.value = [...realisations]
-    } else {
-        filteredRealisations.value = realisations.filter(realisation => realisation.categorie === category)
-    }
-    return filteredRealisations
 }
 
 // Modale
 const modale = ref(false)
-const selectedRealisation = ref(null)
-const openModale = (realisation) => {
-    selectedRealisation.value = realisation
+const selectedWork = ref(null)
+const openModale = (work) => {
+    selectedWork.value = work
     modale.value = true
 }
 const closeModale = () => {
@@ -43,17 +46,17 @@ const closeModale = () => {
         </div>
         <div class="gallery__content">
             <GalleryCard 
-                v-for="realisation in filteredRealisations"
-                :key="realisation.id"
-                :cover="realisation.image"
-                :title="realisation.title"
+                v-for="work in filteredWorks"
+                :key="work.id"
+                :cover="work.image"
+                :title="work.title"
                 class="gallery__card"
-                @click="openModale(realisation)"
+                @click="openModale(work)"
             />
             <GalleryModale 
                 v-if="modale" 
                 @close="closeModale()"
-                :realisation="selectedRealisation"
+                :realisation="selectedWork"
             />
 
         </div>

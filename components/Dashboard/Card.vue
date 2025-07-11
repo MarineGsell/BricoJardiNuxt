@@ -12,16 +12,20 @@ const props = defineProps({
         type: String,
         required: true
     },
-    works: {
-        type: Array,
-        required: true
-    }, 
     description: {
         type: String, 
         required: true
     }
 })
-const works = props.works
+
+const emit = defineEmits(['open', 'delete'])
+const handleOpen = () => {
+    emit('open')
+}
+const handleDelete = () => {
+    emit('delete')
+}
+
 </script>
 <template>
     <div class="card">
@@ -31,20 +35,10 @@ const works = props.works
             <p class="card__place__text">{{ place }}</p>
         </div>
         <NuxtImg class="card__img" :src="img"></NuxtImg>
-        <!-- <ul class="card__list">
-            <li 
-                class="card__list__item"
-                v-for="work in works"
-                :key="work"
-            >
-                <SvgIconCheck class="card__list__item__icon"/>
-                <p class="card__list__item__text">{{ work }}</p>
-            </li>
-        </ul> -->
         <p class="card__text">{{ description }}</p>
         <div class="card__buttons">
-            <ButtonsMain>Modifier</ButtonsMain>
-            <ButtonsMain>Supprimer</ButtonsMain>
+            <ButtonsMain @click="handleOpen">Modifier</ButtonsMain>
+            <ButtonsMain @click="handleDelete">Supprimer</ButtonsMain>
         </div>
     </div>
 </template>
@@ -59,14 +53,17 @@ const works = props.works
         @include flex(column, center, start, $gap-third-mobile);
     }
     &__title {
+        height: 72px;
         width: 100%;
-        text-align: center;
         @include font-h3($main-color);
+        @include center;
     }
     &__place {
+        width: 100%;
         @include flex(row, start, center, $gap-list);
         &__icon {
             color: $text-color-main;
+            height: $icons-height;
         }
         &__text {
             @include font-p($text-color-main);

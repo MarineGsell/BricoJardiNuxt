@@ -67,7 +67,7 @@ const place = computed(() => props.realisation.place)
             width: 80vw;
         }
         @include responsive-mobile {
-            padding: 8px 16px;
+            padding: 12px 24px;
         }
         &__button {
             background-color: $second-color;

@@ -10,12 +10,6 @@ const props = defineProps({
         default: true
     },
 })
-// Notification
-// const notif = reactive({
-//     show: false,
-//     message: '',
-//     button: ''
-// })
 
 // 📥 Références réactives pour les champs du formulaire
 const worksForm = reactive({
@@ -225,14 +219,17 @@ const handleSubmit = () => {
             </div>
             <div class="form__row__field">
                 <label for="category" class="form__field__label">Catégorie</label>
-                <input 
-                    type="text" 
+                <select 
                     id="category"
                     class="form__row__field__input"
                     v-model="worksForm.category"
                     @blur="validateCategory()"
                     @input="validateCategory()"
                 >
+                    <option value="">Choisir un catégorie</option>
+                    <option value="Travaux extérieurs">Travaux extérieurs</option>
+                    <option value="Travaux intérieurs">Travaux intérieurs</option>
+                </select>
             </div>
         </div>
         <div class="form__row">
@@ -291,8 +288,7 @@ const handleSubmit = () => {
                 v-model="worksForm.description"
                 @blur="validateDescription()"
                 @input="validateDescription()"
-            >
-            </textarea>
+            ></textarea>
         </div>
         <ButtonsMain type="submit">Ajouter la réalisation</ButtonsMain>
     </form>
