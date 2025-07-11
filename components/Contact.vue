@@ -23,16 +23,16 @@
                 </ul>
                 <ul class="contact__content__info__items">
                     <li class="contact__content__info__items__item">
-                        <NuxtLink to="/" class="contact__content__info__items__item__link">
+                        <a class="contact__content__info__items__item__link" href="https://www.facebook.com/profile.php?id=61578022661445" target="_blank">
                             <SvgIconFb class="contact__content__info__items__item__link__icon"/>
                             <p class="contact__content__info__items__item__link__text">Brico Jardi</p>
-                        </NuxtLink>
+                        </a>
                     </li>
                     <li class="contact__content__info__items__item">
-                        <NuxtLink to="/" class="contact__content__info__items__item__link">
+                        <a class="contact__content__info__items__item__link" href="https://www.instagram.com/brico_jardi/" target="_blank">
                             <SvgIconInsta class="contact__content__info__items__item__link__icon"/>
-                            <p class="contact__content__info__items__item__link__text">Brico Jardi</p>
-                        </NuxtLink>
+                            <p class="contact__content__info__items__item__link__text">@brico_jardi</p>
+                        </a>
                     </li>
                 </ul>
             </div>
