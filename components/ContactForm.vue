@@ -99,22 +99,28 @@ async function submitForm() {
         alert('Veuillez corriger les erreurs avant de soumettre le formulaire.')
         return
     }
-    $fetch('/api/contact', {
-        method: 'POST',
-        body: contactForm
-    })
-    .then(async () => {
-        await refreshNuxtData()
-        alert('Votre message a été envoyé avec succès !')
-        // Réinitialiser le formulaire après l'envoi
-        contactForm.firstname = ''
-        contactForm.lastname = ''
-        contactForm.email = ''
-        contactForm.phone = ''
-        contactForm.text = ''
-        contactForm.checkbox = false
-    })
-    .catch((e) => alert(e))
+    try {
+        const response = await $fetch('/api/contact/', {
+            method: 'POST',
+            body: contactForm
+        })
+        
+        if (response.success) {
+            await refreshNuxtData()
+            alert('Votre message a été envoyé avec succès !')
+            // Réinitialiser le formulaire
+            contactForm.firstname = ''
+            contactForm.lastname = ''
+            contactForm.email = ''
+            contactForm.phone = ''
+            contactForm.text = ''
+            contactForm.checkbox = false
+        } else {
+            alert(response.error)
+        }
+    } catch (error) {
+        alert('Erreur de connexion')
+    }    
 }
 
 
