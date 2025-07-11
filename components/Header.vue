@@ -16,12 +16,12 @@
                 flexDirection="row"
             />
             <div class="nav__bar__socials">
-                <NuxtLink class="nav__bar__socials__link" to="/">
+                <a class="nav__bar__socials__link" href="https://www.instagram.com/brico_jardi/" target="_blank">
                     <SvgIconInsta class="nav__bar__socials__link__icon"/>
-                </NuxtLink>
-                <NuxtLink class="nav__bar__socials__link" to="/">
+                </a>
+                <a class="nav__bar__socials__link" href="https://www.facebook.com/profile.php?id=61578022661445" target="_blank">
                     <SvgIconFb class="nav__bar__socials__link__icon"/>
-                </NuxtLink>
+                </a>
             </div> 
         </div>
     </nav>
