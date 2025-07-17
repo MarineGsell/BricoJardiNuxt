@@ -9,3 +9,12 @@ export const clients = sqliteTable('clients', {
     text: text('text').notNull(),
     createdAt: integer('created_at', { mode: 'timestamp' }).notNull(),
 })
+
+export const works = sqliteTable('works', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  title: text('title').notNull(),
+  place: text('place').notNull(),
+  imgSrc: text('imgSrc').notNull(),
+  category: text('category').notNull(),
+  description: text('description').notNull(),
+})

@@ -1,20 +1,50 @@
 <script setup>
-import realisations from '~/data/realisations';
+// Data
+const { data: worksData } = await useFetch('/api/works')
+const works = computed(() => {
+    return worksData.value
+})
 
 // Filter Bar
 const categories = ['Tous', 'Travaux extérieurs', 'Travaux intérieurs'] 
 const activeCategory = ref('Tous')
-const filteredRealisations = ref([...realisations])
+const filteredWorks = computed(() => {
+    if(activeCategory.value === 'Tous'){
+        return works.value
+    } else {
+        return works.value?.filter(work => work.category === activeCategory.value)
+    }
+})
 
 const filteredByCategory = (category) => {
     activeCategory.value = category
-    if(category === 'Tous'){
-        filteredRealisations.value = [...realisations]
-    } else {
-        filteredRealisations.value = realisations.filter(realisation => realisation.categorie === category)
-    }
-    return filteredRealisations
 }
+
+// Suppression de projet
+const deleteWork = async (id) => {
+    if (confirm('Êtes-vous sûr de vouloir supprimer ce projet ?')) {
+        $fetch(`/api/works/${id}`, {
+            method: 'DELETE'
+        })
+        .then(async () => {
+            await refreshNuxtData()
+            alert('Projet supprimé avec succès')
+        })
+        .catch((e) => alert(e))
+    }
+}
+
+// Modale
+const modale = ref(false)
+const currentWorkId = ref(null)
+const openModale = (id) => {
+    currentWorkId.value = id
+    modale.value = true
+}
+const closeModale = () => {
+    modale.value = false
+}
+
 
 </script>
 <template>
@@ -34,13 +64,19 @@ const filteredByCategory = (category) => {
         <div class="realisations__content">
             <div class="realisations__content__cards">
                 <DashboardCard 
-                    v-for="realisation in filteredRealisations"
-                    :title="realisation.title"
-                    :place="realisation.place"
-                    :img="realisation.image"
-                    :works="realisation.travaux"
-                    :description="realisation.description"
-                    :key="realisation.id"
+                    v-for="work in filteredWorks"
+                    :title="work.title"
+                    :place="work.place"
+                    :img="work.imgSrc"
+                    :description="work.description"
+                    :key="work.id"
+                    @delete="deleteWork(work.id)"
+                    @open="openModale(work.id)"
+                />
+                <DashboardModale 
+                    v-if="modale"
+                    :workId="currentWorkId"
+                    @close="closeModale()"
                 />
             </div>
         </div>

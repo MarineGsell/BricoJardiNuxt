@@ -85,13 +85,13 @@
     }
     &__subtitle {
         width: 50%;
-        text-align: center;
+        text-align: justify;
         @include font-p($white);    
         @include responsive-tablette {
-            width: 70%;
+            width: 100%;
         }
         @include responsive-mobile {
-            width: 70%;
+            width: 100%;
         }
     }
     &__buttons {

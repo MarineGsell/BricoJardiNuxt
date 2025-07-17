@@ -23,7 +23,7 @@ const props = defineProps({
         background-attachment: scroll;
     };
     @include responsive-mobile {
-        height: 20vh;
+        height: 30vh;
         background-position: center 20%;
         background-attachment: scroll;
     }

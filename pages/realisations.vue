@@ -1,5 +1,6 @@
 <script setup>
-const title = "Votre projet, notre savoir-faire";
+const title = "Nos réalisations";
+const subtitle = "Votre projet, notre savoir-faire";
 const text = "Découvrez nos réalisations dans le Bassin d'Arcachon : terrasses en bois, rénovations intérieures et aménagements extérieurs. Chaque projet témoigne de notre savoir-faire et de notre engagement qualité. Laissez-vous inspirer par ces transformations réussies pour imaginer votre futur projet avec Brico Jardi.";
 
 </script>
@@ -8,6 +9,7 @@ const text = "Découvrez nos réalisations dans le Bassin d'Arcachon : terrasses
         <HeaderHero 
             :title="title"
             :text="text"
+            :subtitle="subtitle"
             to="/services"
             button="Voir tous les services"
             class="realisations__header"

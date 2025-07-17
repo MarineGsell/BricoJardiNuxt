@@ -15,6 +15,13 @@
       "when": 1752060783710,
       "tag": "0001_silky_khan",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1752237147044,
+      "tag": "0002_young_black_tarantula",
+      "breakpoints": true
     }
   ]
 }

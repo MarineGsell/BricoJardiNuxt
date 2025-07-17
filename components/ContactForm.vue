@@ -222,6 +222,9 @@ async function submitForm() {
     &__row {
         width: 100%;
         @include flex(row, center, start, $gap-form);
+        @include responsive-mobile {
+            @include flex(column, center, start, $gap-form); 
+        }
         &__field {
             width: 100%;
             @include flex(column, center, start, $gap-label);
