@@ -12,7 +12,8 @@ const travauxInt = servicesList.filter(service => service.categorie === "travaux
 const perso = servicesList.filter(service => service.categorie === "autre");
 
 // Hero content
-const title = "Transformez votre habitat";
+const title = "Nos services";
+const subtitle = "Votre maison et votre jardin entre de bonnes mains";
 const text = "De la rénovation de votre intérieur à l'aménagement de vos espaces extérieurs, Brico Jardi vous accompagne dans tous vos projets sur le Bassin d'Arcachon. Travail soigné, délais respectés, écoute attentive.";
 
 
@@ -22,6 +23,7 @@ const text = "De la rénovation de votre intérieur à l'aménagement de vos esp
         <HeaderHero 
             :title="title"
             :text="text"
+            :subtitle="subtitle"
             to="/realisations"
             button="Voir nos réalisations"
             class="services__header"

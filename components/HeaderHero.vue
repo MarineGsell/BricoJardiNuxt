@@ -4,6 +4,10 @@ const props = defineProps({
         type: String,
         required: true
     },
+    subtitle: {
+        type: String,
+        required: true
+    },
     text: {
         type: String,
         default: ''
@@ -21,6 +25,7 @@ const props = defineProps({
 <template>
     <section class="headerhero">
         <h1 class="headerhero__title">{{ title }}</h1>
+        <h2 class="headerhero__subtitle">{{ subtitle }}</h2>
         <p class="headerhero__text">{{ text }}</p>
         <div class="headerhero__buttons">
             <ButtonsCta to="/contact#contactForm">Devis Gratuit</ButtonsCta>
@@ -49,10 +54,26 @@ const props = defineProps({
         padding: $padding-header-hero-title;
         background-color: $second-color;
         @include font-h1($white);
+        @include responsive-tablette {
+            width: 90%;
+        }
     }
+    &__subtitle {
+        width: 70%;
+        text-align: center;
+        
+        @include font-h3($white);
+        @include responsive-tablette {
+            width: 90%;
+        }
+    }
+
     &__text {
         width: 70%;
-        @include font-p($white);    
+        @include font-p($white);   
+        @include responsive-tablette {
+            width: 90%;
+        } 
     }
     &__buttons {
         @include flex (row, center, center, $gap-second-desktop);

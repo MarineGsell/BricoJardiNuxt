@@ -20,9 +20,11 @@
     color: $white;
     @include flex(column, center, center, $gap-second-desktop);
     @include responsive-tablette {
+        padding: $padding-section-tablette;
         @include flex(column, center, center, $gap-second-tablette);
     }
     @include responsive-mobile {
+        padding: $padding-section-mobile;
         @include flex(column, center, center, $gap-second-mobile);
     }
     &__logo {
@@ -30,7 +32,19 @@
         width: auto;
     }
     &__text {
-        @include font-p($white);
+        font-family: "Source Sans 3", sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.6;
+        color: $white;
+        text-align: center;
+        @include responsive-tablette {
+            font-size: 16px;
+        }
+        @include responsive-mobile {
+            font-size: 16px;
+        }
+        // @include font-p($white);
         &__link {
             cursor: pointer;
             text-decoration: none;
