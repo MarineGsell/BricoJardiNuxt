@@ -45,7 +45,6 @@ const closeModale = () => {
     modale.value = false
 }
 
-
 </script>
 <template>
     <div class="realisations" id="realisationsAdmin">
