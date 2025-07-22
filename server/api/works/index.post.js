@@ -45,19 +45,24 @@ export default eventHandler(async (event) => {
       const fileExtension = imageFile.filename?.split('.').pop() || 'jpg'
       const fileName = `works/${timestamp}-${randomString}.${fileExtension}`
 
+      console.log('🔧 Tentative upload:', fileName)
+
       // Upload vers NuxtHub Blob
       const blob = await hubBlob().put(fileName, imageFile.data, {
         contentType: imageFile.type || 'image/jpeg'
       })
 
       imgSrc = blob.pathname
-      console.log('✅ Image uploadée vers Blob:', fileName)
-    } catch (blobError) {
+      console.log('✅ Blob uploadé, pathname:', blob.pathname)
+      console.log('✅ imgSrc défini sur:', imgSrc)
+      } catch (blobError) {
       console.error('❌ Erreur upload Blob:', blobError.message)
       // Fallback : continuer sans image plutôt que de planter
       imgSrc = null
     }
   }
+  console.log('💾 Valeur finale imgSrc avant sauvegarde:', imgSrc)
+
 
   // Sauvegarde en base de données
   try {
