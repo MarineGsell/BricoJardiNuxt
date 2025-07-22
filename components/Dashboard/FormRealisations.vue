@@ -16,19 +16,25 @@ const worksForm = reactive({
     title: props.initialData.title || '',
     category: props.initialData.category || '',
     place: props.initialData.place || '',
-    imgSrc: props.initialData.imgSrc || '',
-    photoPreview: props.initialData.imgSrc || null,
-    description: props.initialData.description || ''
+    description: props.initialData.description || '',
+    imageFile: null,
+    photoPreview: null
 })
+
+// Utilisation de blob
+const { getBlobUrl } = useBlobUrl()
 
 // Surveillance des changements pour le formulaire
 watch(() => props.initialData, (newData) => {
     worksForm.title = newData?.title || ''
     worksForm.category = newData?.category || ''
     worksForm.place = newData?.place || ''
-    worksForm.imgSrc = newData?.imgSrc || ''
-    worksForm.photoPreview = newData?.imgSrc || null
     worksForm.description = newData?.description || ''
+    if (newData?.imgSrc) {
+        worksForm.photoPreview = getBlobUrl(newData.imgSrc)
+    } else {
+        worksForm.photoPreview = null
+    }
 }, { immediate: true })
 
 // 🚨 Variables pour stocker les erreurs
@@ -107,8 +113,8 @@ const handleFileUpload = (event) => {
             return
         }
         
-        // Conversion en Base64 pour la base de données
-        convertFileToBase64(file)
+        // Stockage du fichier 
+        worksForm.imageFile = file
         
         // Création de l'aperçu
         createImagePreview(file)
@@ -119,30 +125,6 @@ const handleFileUpload = (event) => {
             type: file.type
         })
     }
-}
-
-// 🔄 Fonction pour convertir le fichier en Base64
-const convertFileToBase64 = (file) => {
-    const reader = new FileReader()
-    
-    reader.onload = (e) => {
-        const base64String = e.target.result
-        
-        // Stocker le Base64 pour la base de données
-        worksForm.imgSrc = base64String
-        
-        // Stocker aussi pour l'aperçu
-        worksForm.photoPreview = base64String
-        
-        console.log('✅ Fichier converti en Base64')
-    }
-    
-    reader.onerror = (error) => {
-        console.error('❌ Erreur lors de la conversion:', error)
-        alert('Erreur lors du traitement de l\'image')
-    }
-    
-    reader.readAsDataURL(file)
 }
 
 // 🖼️ Fonction pour créer l'aperçu de l'image
@@ -184,12 +166,25 @@ const handleSubmit = () => {
    if (!validateForm()) {
         console.log('❌ Formulaire invalide')
         alert('Veuillez corriger les erreurs avant de continuer')
-        // notif.show = true
-        // notif.message = 'Veuillez corriger les erreurs avant de continuer'
-        // notif.button = 'OK'
         return
     } else {
-        emit('submit', worksForm)
+        
+        // Création du FormData
+        const formData = new FormData()
+        formData.append('title', worksForm.title)
+        formData.append('category', worksForm.category)
+        formData.append('place', worksForm.place)
+        formData.append('description', worksForm.description)
+
+        // Si une image est uploadée
+        if (worksForm.imageFile) {
+            formData.append('image', worksForm.imageFile)
+        } else if (props.initialData.imgSrc) {
+            formData.append('existingImage', props.initialData.imgSrc)
+        }
+        emit('submit', formData)
+
+        // Nettoyage des champs
         if (props.clearAfterSubmit) {
             worksForm.title = ''
             worksForm.category = ''

@@ -18,6 +18,7 @@ const props = defineProps({
     }
 })
 
+// Création des évènements
 const emit = defineEmits(['open', 'delete'])
 const handleOpen = () => {
     emit('open')
@@ -25,6 +26,7 @@ const handleOpen = () => {
 const handleDelete = () => {
     emit('delete')
 }
+
 
 </script>
 <template>

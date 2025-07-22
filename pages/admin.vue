@@ -31,7 +31,7 @@ async function login() {
             <p class="admin__message__text">Vous êtes déja connecté</p>
             <ButtonsMain to="/dashboard">Accéder au dashbord</ButtonsMain>
         </div>
-        <form  class="admin__form" @submit.prevent="login">
+        <form v-else class="admin__form" @submit.prevent="login">
             <div class="admin__form__column">
                 <div class="admin__form__column__field">
                     <label class="admin__form__column__field__label">Email</label>

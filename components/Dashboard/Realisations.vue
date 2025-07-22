@@ -5,6 +5,9 @@ const works = computed(() => {
     return worksData.value
 })
 
+// Utilisation de blob
+const { getBlobUrl } = useBlobUrl()
+
 // Filter Bar
 const categories = ['Tous', 'Travaux extérieurs', 'Travaux intérieurs'] 
 const activeCategory = ref('Tous')
@@ -66,7 +69,7 @@ const closeModale = () => {
                     v-for="work in filteredWorks"
                     :title="work.title"
                     :place="work.place"
-                    :img="work.imgSrc"
+                    :img="getBlobUrl(work.imgSrc) || ''"  
                     :description="work.description"
                     :key="work.id"
                     @delete="deleteWork(work.id)"
