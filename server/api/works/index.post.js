@@ -1,5 +1,7 @@
+import { hubBlob } from '@nuxthub/core'
+
 export default eventHandler(async (event) => {
-  // Authentification
+  // Route sécurisée
   const { user } = await requireUserSession(event)
   if (!user) {
     throw createError({
