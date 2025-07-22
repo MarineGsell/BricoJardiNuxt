@@ -1,6 +1,4 @@
 <script setup>
-import realisations from '~/data/realisations'
-
 const emit = defineEmits(['close'])
 const handleClose = () => {
     emit('close')
@@ -27,17 +25,8 @@ const place = computed(() => props.realisation.place)
                 <SvgIconPin class="modale__window__place__icon"/>
                 <p class="modale__window__place__text">{{ place }}</p>
             </div>
-            <div class="modale__window__img" :style="{ backgroundImage:`url(${img})`}"></div>
-            <ul class="modale__window__list">
-                <li 
-                    class="modale__window__list__item"
-                    v-for="work in works"
-                    :key="work"
-                >
-                    <SvgIconCheck class="modale__window__list__item__icon"/>
-                    <p class="modale__window__list__item__text">{{ work }}</p>
-                </li>
-            </ul>
+            <div class="modale__window__img" :style="{ backgroundImage:`url(${realisation.imgSrc})`}"></div>
+            <p class="modale__window__text">{{ realisation.description }}</p>
         </div>
     </div>
 </template>
@@ -56,6 +45,8 @@ const place = computed(() => props.realisation.place)
     &__window {
         background-color: $white;
         width: 50vw;
+        max-height: 70vh;
+        overflow-y: auto;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -82,13 +73,15 @@ const place = computed(() => props.realisation.place)
         }
         &__img {
             width: 100%;
-            height: 300px;
+            min-height: 400px;
+            height: auto;
             background-position: center;
             background-size: cover;
             border-radius: 5px;
             margin: auto;
+            flex-shrink: 0;
             @include responsive-mobile {
-                height: 150px;
+                min-height: 300px;
             }
         }
         &__title {
@@ -106,17 +99,8 @@ const place = computed(() => props.realisation.place)
                 @include font-p($text-color-main);
             }
         }
-        &__list {
-            list-style: none;
-            &__item {
-                @include flex(row, start, center, $gap-list);
-                &__icon {
-                    color: $second-color;
-                }
-                &__text {
-                    @include font-p($text-color-main);
-                }
-            }
+        &__text {
+            @include font-p($text-color-main);
         }
     }
 }

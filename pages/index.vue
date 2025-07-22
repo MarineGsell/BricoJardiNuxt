@@ -148,6 +148,7 @@ const perso = servicesList.filter(service => service.categorie === "autre");
             grid-template-columns: repeat(3, 1fr);
             gap: $gap-second-desktop;
             @include responsive-tablette {
+                grid-template-columns: repeat(2, 1fr);
                 gap: $gap-second-tablette;
             }
             @include responsive-mobile {

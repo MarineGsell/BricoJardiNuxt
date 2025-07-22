@@ -24,11 +24,6 @@ const props = defineProps({
                 <p class="card__content__item__text">{{service.title}}</p>
             </li>
         </ul>
-        <!-- <div 
-            class="box__service__content__item"
-            v-for="service in services"
-            :key="service.id"
-        ></div> -->
     </div>
 </template>
 <style lang="scss" scoped>
@@ -49,6 +44,9 @@ const props = defineProps({
     &:hover {
         height: 350px;
         border-radius: 0;
+        @include responsive-tablette {
+            height: auto;
+        }
         .card__header__title {
             color: $second-color;
         }

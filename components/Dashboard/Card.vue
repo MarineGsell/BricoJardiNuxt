@@ -31,13 +31,15 @@ const handleDelete = () => {
 </script>
 <template>
     <div class="card">
-        <h3 class="card__title">{{ title }}</h3>
-        <div class="card__place">
-            <SvgIconPin class="card__place__icon"/>
-            <p class="card__place__text">{{ place }}</p>
+        <div class="card__content">
+            <h3 class="card__content__title">{{ title }}</h3>
+            <div class="card__content__place">
+                <SvgIconPin class="card__content__place__icon"/>
+                <p class="card__content__place__text">{{ place }}</p>
+            </div>
+            <NuxtImg class="card__content__img" :src="img"></NuxtImg>
+            <p class="card__content__text">{{ description }}</p>
         </div>
-        <NuxtImg class="card__img" :src="img"></NuxtImg>
-        <p class="card__text">{{ description }}</p>
         <div class="card__buttons">
             <ButtonsMain @click="handleOpen">Modifier</ButtonsMain>
             <ButtonsMain @click="handleDelete">Supprimer</ButtonsMain>
@@ -47,52 +49,48 @@ const handleDelete = () => {
 <style lang="scss" scoped>
 .card {
     @include card;
-    @include flex(column, center, start, $gap-third-desktop);
+    @include flex(column, space-between, start, $gap-third-desktop);
     @include responsive-tablette {
-        @include flex(column, center, start, $gap-third-tablette);
+        @include flex(column, space-between, start, $gap-third-tablette);
     }
     @include responsive-mobile {
-        @include flex(column, center, start, $gap-third-mobile);
+        @include flex(column, space-between, start, $gap-third-mobile);
     }
-    &__title {
-        height: 72px;
-        width: 100%;
-        @include font-h3($main-color);
-        @include center;
-    }
-    &__place {
-        width: 100%;
-        @include flex(row, start, center, $gap-list);
-        &__icon {
-            color: $text-color-main;
-            height: $icons-height;
+    &__content {
+        @include flex(column, start, start, $gap-third-desktop);
+        @include responsive-tablette {
+            @include flex(column, start, start, $gap-third-tablette);
         }
-        &__text {
-            @include font-p($text-color-main);
+        @include responsive-mobile {
+            @include flex(column, start, start, $gap-third-mobile);
         }
-    }
-    &__img {
-        width: 100%;
-        border-radius: 5px;
-        margin: auto;
-        height: 300px;
-        object-fit: cover;
-        object-position: center;
-    }
-    &__list {
-        @include flex(column, center, start, $gap-list);
-        &__item {
+        &__title {
+            height: 72px;
+            width: 100%;
+            @include font-h3($main-color);
+            @include center;
+        }
+        &__place {
+            width: 100%;
             @include flex(row, start, center, $gap-list);
             &__icon {
-                color: $second-color;
+                color: $text-color-main;
+                height: $icons-height;
             }
             &__text {
-                @include font-p($text-color-main)
+                @include font-p($text-color-main);
             }
         }
-    }
-    &__text {
-        @include font-p($text-color-main)
+        &__img {
+            width: 100%;
+            border-radius: 5px;
+            height: 300px;
+            object-fit: cover;
+            object-position: center;
+        }
+        &__text {
+            @include font-p($text-color-main)
+        }
     }
     &__buttons {
         width: 100%;
