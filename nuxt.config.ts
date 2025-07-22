@@ -27,6 +27,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
   ],
   hub: {
-    database: true
+    database: true,
+    blob: true
   },
 })
