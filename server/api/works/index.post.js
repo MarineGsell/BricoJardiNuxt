@@ -1,4 +1,3 @@
-import { hubBlob } from '@nuxthub/core'
 
 export default eventHandler(async (event) => {
   // Route sécurisée
