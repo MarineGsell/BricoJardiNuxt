@@ -9,6 +9,10 @@ const props = defineProps({
         type: Object
     }
 })
+
+// Utilisation de blob
+const { getBlobUrl } = useBlobUrl()
+
 const title = computed(() => props.realisation.title) 
 const img = computed(() => props.realisation.image) 
 const works = computed(() => props.realisation.travaux) 
@@ -25,7 +29,7 @@ const place = computed(() => props.realisation.place)
                 <SvgIconPin class="modale__window__place__icon"/>
                 <p class="modale__window__place__text">{{ place }}</p>
             </div>
-            <div class="modale__window__img" :style="{ backgroundImage:`url(${realisation.imgSrc})`}"></div>
+            <div class="modale__window__img" :style="{ backgroundImage: getBlobUrl(realisation.imgSrc)}"></div>
             <p class="modale__window__text">{{ realisation.description }}</p>
         </div>
     </div>
