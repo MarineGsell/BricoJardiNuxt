@@ -13,6 +13,12 @@ const props = defineProps({
 // Utilisation de blob
 const { getBlobUrl } = useBlobUrl()
 
+// Computed property pour le background-image
+const backgroundImageStyle = computed(() => {
+  const imageUrl = getBlobUrl(props.realisation.imgSrc)
+  return imageUrl ? `url(${imageUrl})` : 'none'
+})
+
 const title = computed(() => props.realisation.title) 
 const img = computed(() => props.realisation.image) 
 const works = computed(() => props.realisation.travaux) 
@@ -29,7 +35,7 @@ const place = computed(() => props.realisation.place)
                 <SvgIconPin class="modale__window__place__icon"/>
                 <p class="modale__window__place__text">{{ place }}</p>
             </div>
-            <div class="modale__window__img" :style="{ backgroundImage: getBlobUrl(realisation.imgSrc)}"></div>
+            <div class="modale__window__img" :style="{ backgroundImage: backgroundImageStyle}"></div>
             <p class="modale__window__text">{{ realisation.description }}</p>
         </div>
     </div>
