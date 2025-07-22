@@ -18,12 +18,12 @@ const props = defineProps({
     background-position: center;
     background-attachment: fixed;
     @include responsive-tablette {
-        height: 40vh;
+        height: 50vh;
         background-position: center 30%;
         background-attachment: scroll;
     };
     @include responsive-mobile {
-        height: 30vh;
+        height: 40vh;
         background-position: center 20%;
         background-attachment: scroll;
     }

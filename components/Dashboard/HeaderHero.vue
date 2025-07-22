@@ -6,8 +6,8 @@
             <h1 class="headerhero__title__text">Tableau de bord</h1>
             <div class="headerhero__title__anim">
                 <h2 class="headerhero__title__anim__line">Coucou Papa !</h2> 
-                <h2 class="headerhero__title__anim__line">Met à jour tes services</h2> 
-                <h2 class="headerhero__title__anim__line">Met à jour tes réalisations</h2> 
+                <h2 class="headerhero__title__anim__line">Met à jour ...</h2> 
+                <h2 class="headerhero__title__anim__line">... tes réalisations !</h2> 
             </div>
         </div>
     </section>
