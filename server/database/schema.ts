@@ -14,7 +14,7 @@ export const works = sqliteTable('works', {
   id: integer('id').primaryKey({ autoIncrement: true }),
   title: text('title').notNull(),
   place: text('place').notNull(),
-  imgSrc: text('imgSrc').notNull(),
+  imgSrc: text('imgSrc'),
   category: text('category').notNull(),
   description: text('description').notNull(),
 })
