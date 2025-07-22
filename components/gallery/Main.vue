@@ -1,8 +1,12 @@
 <script setup>
+// Data
 const { data: worksData } = await useFetch('/api/works')
 const works = computed(() => {
     return worksData.value
 })
+
+// Utilisation de blob
+const { getBlobUrl } = useBlobUrl()
 
 // Filter Bar
 const categories = ['Tous', 'Travaux extérieurs', 'Travaux intérieurs'] 
@@ -48,7 +52,7 @@ const closeModale = () => {
             <GalleryCard 
                 v-for="work in filteredWorks"
                 :key="work.id"
-                :cover="work.image"
+                :cover="getBlobUrl(work.imgSrc) || ''"
                 :title="work.title"
                 class="gallery__card"
                 @click="openModale(work)"

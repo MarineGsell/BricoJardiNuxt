@@ -1,8 +1,8 @@
 <script setup>
 const props = defineProps({
-    cover: {
-        type: String, 
-        required: true
+cover: {
+    type: String, 
+    required: true
     },
 title: {
     type: String, 
