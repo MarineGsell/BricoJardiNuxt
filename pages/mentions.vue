@@ -1,3 +1,11 @@
+<script setup>
+// Meta
+useSeoMeta({
+  title: 'Mentions légales – Brico Jardi',
+  description: 'Consultez les mentions légales du site Brico Jardi : éditeur, hébergeur, propriété intellectuelle, et informations réglementaires. Site conforme aux obligations légales en vigueur.'
+})
+
+</script>
 <template>
     <div class="mentions">
         <div class="mentions__header">

@@ -1,4 +1,10 @@
 <script setup>
+// Meta
+useSeoMeta({
+  title: 'Services d’aménagement & rénovation – Brico Jardi',
+  description: 'Découvrez les services Brico Jardi : créations de terrasses, clôtures, abris, plantations, entretien de haies, peinture intérieur/extérieur, rénovation sur mesure. Profitez d’un accompagnement personnalisé et d’un savoir‑faire local.'
+})
+
 // Images
 import AmenagementExtImg from "/photos/jardin-4.webp"
 import EntretienExtImg from "/photos/jardin-1.webp"

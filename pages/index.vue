@@ -1,4 +1,10 @@
 <script setup>
+// Meta
+useSeoMeta({
+  title: 'Brico Jardi – Aménagement & rénovation sur le Bassin d’Arcachon',
+  description: 'Brico Jardi, votre expert en aménagement intérieur et extérieur sur le Bassin d’Arcachon : Terrasses bois, clôtures, entretien de jardin, peinture, rénovation… Devis gratuit et travail soigné.'
+})
+
 // Data
 import servicesList from '~/data/servicesList';
 const amenagementExt = servicesList.filter(service => service.categorie === "amenagementExt");

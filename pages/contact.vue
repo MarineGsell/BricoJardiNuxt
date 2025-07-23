@@ -1,4 +1,10 @@
 <script setup>
+// Meta
+useSeoMeta({
+  title: 'Vous avez un projet d’aménagement ou de rénovation ? Contactez Brico Jardi pour un devis gratuit et des conseils personnalisés. Intervention sur le Bassin d’Arcachon.',
+  description: 'Vous avez un projet d’aménagement ou de rénovation ? Contactez Brico Jardi pour un devis gratuit et des conseils personnalisés. Intervention sur le Bassin d’Arcachon.'
+})
+
 const title = "Contact";
 const subtitle = "Parlons de votre projet ensemble";
 const text = "Devis gratuit, conseil personnalisé ou simple question : nous sommes là pour vous accompagner dans tous vos projets d'aménagement et de rénovation. Basés à Andernos-les-Bains, nous intervenons rapidement sur tout le Bassin d'Arcachon. Contactez-nous par téléphone ou via notre formulaire, nous vous répondrons sous 24h avec des solutions sur-mesure.";

@@ -6,9 +6,9 @@
         <SvgLogoMain class="footer__logo"/>
         <p class="footer__text">
             @copyright {{ new Date().getFullYear() }} BricoJardi - 
-            <NuxtLink class="footer__text__link" target="_blank" to="/mentions">Mentions légales</NuxtLink>
+            <NuxtLink class="footer__text__link" target="_blank" to="/mentions" aria-label="Lien vers les mentions légales" title="Lien vers les mentions légales">Mentions légales</NuxtLink>
             - Site réalisé par
-            <a href="https://marine.chopingsell.com/" class="footer__text__link" target="_blank">Marine DevWeb</a>
+            <a href="https://marine.chopingsell.com/" class="footer__text__link" target="_blank" aria-label="Lien vers Marine webdev" title="Lien vers Marine webdev">Marine DevWeb</a>
         </p>
     </div>
 </template>
@@ -44,7 +44,6 @@
         @include responsive-mobile {
             font-size: 16px;
         }
-        // @include font-p($white);
         &__link {
             cursor: pointer;
             text-decoration: none;
