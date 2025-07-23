@@ -1,14 +1,17 @@
 <script setup>
 // Data
-import realisations from '~/data/realisations'
+const { data: worksData } = await useFetch('/api/works')
+const works = computed(() => {
+    return worksData.value || []
+})
 
-const currentItem = ref(0)
+// Mise en place de la navigation du carousel
 const direction = ref('right')
 
 const goToPrev = () => {
     direction.value = 'left'
     if(currentItem.value === 0){
-        currentItem.value = realisations.length -1
+        currentItem.value = works.value.length -1
     } else {
         currentItem.value--
     }
@@ -16,12 +19,24 @@ const goToPrev = () => {
 
 const goToNext = () => {
     direction.value = 'right'
-    if(currentItem.value === realisations.length -1) {
+    if(currentItem.value === works.value.length -1) {
         currentItem.value = 0
     } else {
         currentItem.value++
     }
 }
+
+// Trouver l'image avec le bon index
+const currentItem = ref(0)
+const currentWork = computed(() => {
+    return works.value?.[currentItem.value] || null
+})
+
+const { getBlobUrl } = useBlobUrl()
+
+const currentImageUrl = computed(() => {
+    return currentWork.value?.imgSrc ? getBlobUrl(currentWork.value.imgSrc) : null
+})
 
 </script>
 <template>
@@ -39,7 +54,7 @@ const goToNext = () => {
                     <CarouselSlide 
                     :key="currentItem"
                     class="carousel__container__current__slide"
-                    :bgImg="realisations[currentItem].image"
+                    :bgImg="currentImageUrl"
                     />
                 </Transition>
             </div>
