@@ -7,7 +7,6 @@ definePageMeta({
     <div class="dashboard">
         <DashboardHeaderHero />
         <div class="dashboard__content">
-            <!-- <DashboardServices /> -->
             <DashboardRealisations />
             <DashboardAjoutRealisations />
         </div>

@@ -44,7 +44,7 @@ const text = "Devis gratuit, conseil personnalisé ou simple question : nous som
                         </li>
                     </ul>
                 </div>
-            <img class="contact-page__zone__main__img" src="assets/zone-intervention.png" alt="">
+            <NuxtImg format="webp" class="contact-page__zone__main__img" src="assets/zone-intervention.png" alt="carte de la zone d'intervention de brico jardi" />
             </div>
         </div>
         <Contact 

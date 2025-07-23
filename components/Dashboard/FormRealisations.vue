@@ -248,7 +248,7 @@ const handleSubmit = () => {
                 <!-- 🖼️ Zone de prévisualisation -->
                 <div v-if="worksForm.photoPreview" class="form__row__field__preview">
                     <div class="form__row__field__preview__container">
-                        <NuxtImg :src="worksForm.photoPreview" alt="Aperçu" class="form__row__field__preview__container__image" />
+                        <NuxtImg format="webp" :src="worksForm.photoPreview" alt="Aperçu" class="form__row__field__preview__container__image" />
                         <div class="form__row__field__preview__container__overlay">
                             <ButtonsLittle 
                                 type="button"

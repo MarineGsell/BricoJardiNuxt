@@ -5,6 +5,35 @@ useSeoMeta({
   description: 'Brico Jardi, votre expert en aménagement intérieur et extérieur sur le Bassin d’Arcachon : Terrasses bois, clôtures, entretien de jardin, peinture, rénovation… Devis gratuit et travail soigné.'
 })
 
+// Schéma.org
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Brico Jardi",
+        "image": "public/favicon.svg", 
+        "url": "https://bricojardi.com",
+        "telephone": "+33 6 76 66 04 66", 
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Avenue des hères",
+          "addressLocality": "Andernos-les-bains",
+          "postalCode": "33980",
+          "addressCountry": "FR"
+        },
+        "openingHours": "Mo-Fr 09:00-18:00", 
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61578022661445",
+          "https://www.instagram.com/brico_jardi/"
+        ]
+      })
+    }
+  ]
+})
+
 // Data
 import servicesList from '~/data/servicesList';
 const amenagementExt = servicesList.filter(service => service.categorie === "amenagementExt");

@@ -37,7 +37,7 @@ const handleDelete = () => {
                 <SvgIconPin class="card__content__place__icon"/>
                 <p class="card__content__place__text">{{ place }}</p>
             </div>
-            <NuxtImg class="card__content__img" :src="img"></NuxtImg>
+            <NuxtImg format="webp" class="card__content__img" :src="img"></NuxtImg>
             <p class="card__content__text">{{ description }}</p>
         </div>
         <div class="card__buttons">
