@@ -23,7 +23,7 @@
                 </ul>
                 <ul class="contact__content__info__items">
                     <li class="contact__content__info__items__item">
-                        <a class="contact__content__info__items__item__link" href="https://www.facebook.com/profile.php?id=61578022661445" target="_blank">
+                        <a class="contact__content__info__items__item__link" href="https://www.facebook.com/profile.php?id=61578748887619" target="_blank">
                             <SvgIconFb class="contact__content__info__items__item__link__icon"/>
                             <p class="contact__content__info__items__item__link__text">Brico Jardi</p>
                         </a>

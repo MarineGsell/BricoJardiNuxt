@@ -19,7 +19,7 @@
                 <a class="nav__bar__socials__link" href="https://www.instagram.com/brico_jardi/" target="_blank" aria-label="Vers la page instagram de Brico Jardi" title="Vers la page instagram de Brico Jardi">
                     <SvgIconInsta class="nav__bar__socials__link__icon"/>
                 </a>
-                <a class="nav__bar__socials__link" href="https://www.facebook.com/profile.php?id=61578022661445" target="_blank" aria-label="Vers la page facebook de Brico Jardi" title="Vers la page facebook de Brico Jardi">
+                <a class="nav__bar__socials__link" href="https://www.facebook.com/profile.php?id=61578748887619" target="_blank" aria-label="Vers la page facebook de Brico Jardi" title="Vers la page facebook de Brico Jardi">
                     <SvgIconFb class="nav__bar__socials__link__icon"/>
                 </a>
             </div> 
